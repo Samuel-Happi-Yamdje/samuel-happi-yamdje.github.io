@@ -1,3 +1,6 @@
+<script src="script.js"></script>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,14 +17,14 @@
             --heading-color: #ccd6f6;
             --bg-color: #1c1c1c;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Calibre', sans-serif;
             background-color: var(--bg-color);
@@ -70,8 +73,8 @@
 
         /* Sections */
         section {
-            min-height: 100vh;
-            padding: 100px 20px;
+            min-height: 80vh;
+            padding: 60px 20px;
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
@@ -79,9 +82,34 @@
             justify-content: center;
         }
 
+        section:nth-child(even) {
+            background: linear-gradient(180deg, #1c1c1c 0%, #0a192f 100%);
+        }
+
         /* Hero Section */
         .hero {
+            background: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7') no-repeat center center/cover;
             padding-top: 150px;
+            position: relative;
+            color: var(--text-color);
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.7);
+            z-index: 0;
+        }
+
+        .hero h1,
+        .hero p,
+        .hero .cv-button {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -111,10 +139,16 @@
             padding: 2rem;
             border-radius: 8px;
             transition: transform 0.3s ease;
+            text-align: center;
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
+        }
+
+        .skill-card img {
+            width: 40px;
+            margin-bottom: 1rem;
         }
 
         .skill-card h3 {
@@ -235,6 +269,139 @@
                 justify-content: center;
             }
         }
+
+/* Image certification */
+        .modal {
+            display: none; /* Masqué par défaut */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7); /* Fond sombre */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background: rgba(10, 25, 47, 0.747);
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Largeur de la fenêtre modal */
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .close-btn {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Animation d'apparition pour le modal */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            animation: fadeIn 0.5s ease;
+        }
+
+        /* Limiter la taille des images dans le modal */
+        .modal-img {
+            max-width: 100%;   /* L'image ne dépassera pas la largeur du modal */
+            height: auto;      /* Maintenir les proportions de l'image */
+            margin-bottom: 20px;
+        }
+
+
+
+        #certifications {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+            .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+            .cert-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
+            .cert-card img {
+            width: 50px;
+            margin-bottom: 1rem;
+        }
+
+            .cert-card h3 {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+            .cert-card p {
+            font-size: 0.95rem;
+            color: var(--heading-color);
+        }
+
+        
+        /* Style de la grille des certifications */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+    
+        /* Texte incitatif en bas de la carte */
+        .click-more {
+            color: #ff9f00; /* Jaune-orangé */
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            text-align: center;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .click-more:hover {
+            color: var(--secondary-color); /* Changer la couleur au survol */
+        }
+
+
+
+
+
     </style>
 </head>
 <body>
@@ -244,6 +411,7 @@
             <li><a href="#about">À propos</a></li>
             <li><a href="#skills">Compétences</a></li>
             <li><a href="#projects">Projets</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -255,40 +423,99 @@
     </section>
 
     <section id="about" class="animate-on-scroll">
-        <h2>À Propos</h2>
-        <p>Étudiant passionné par la cybersécurité, spécialisé dans la protection des systèmes et la sécurité offensive. Mon objectif est de contribuer à un cyberespace plus sûr en relevant les défis de sécurité les plus complexes.</p>
+        <h2 style="color: var(--secondary-color); font-size: 2.5rem; margin-bottom: 1rem;">À Propos</h2>
+        <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
+            <p style="margin-bottom: 1.5rem;">
+                Je m'appelle <strong>Samuel Happi Yamdje</strong>, étudiant passionné par la cybersécurité et les technologies du cloud. 
+                Actuellement en fin de Licence Professionnelle, je poursuis mon parcours en intégrant un <strong>Mastère en Cybersécurité et Cloud Computing</strong> en alternance.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+                Autonome, rigoureux et toujours curieux d’en apprendre davantage, je m’intéresse particulièrement aux <strong>enjeux de gouvernance en cybersécurité</strong>, 
+                à la protection des systèmes d'information et à la sécurité réseau.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+                J’ai pu consolider mes compétences techniques à travers divers projets académiques et travaux pratiques, notamment autour de <strong>l’analyse des failles de sécurité</strong>, 
+                de la configuration des réseaux, et du dépannage informatique.
+            </p>
+            <p>
+                <strong>Mon objectif :</strong> contribuer activement à la <strong>sécurisation des systèmes et des données</strong> tout en continuant à évoluer dans un environnement stimulant, 
+                au contact de professionnels du secteur.
+            </p>
+        </div>
     </section>
+    
 
     <section id="skills">
         <h2>Compétences</h2>
         <div class="skills-grid">
             <div class="skill-card animate-on-scroll">
+                <img src="https://img.icons8.com/ios-filled/50/ffe100/server.png" alt="Système">
                 <h3>Administration systèmes</h3>
                 <p>Windows Server, Gestion des privilèges, Linux</p>
             </div>
             <div class="skill-card animate-on-scroll">
+                <img src="https://img.icons8.com/ios-filled/50/ffe100/database.png" alt="Base de données">
                 <h3>Base de données</h3>
                 <p>Live SQL Oracle</p>
             </div>
             <div class="skill-card animate-on-scroll">
+                <img src="https://img.icons8.com/ios-filled/50/ffe100/network-card.png" alt="CCNA">
                 <h3>CCNA</h3>
-                <p>Cours d'introduction au Certifications CCNA 1 et 2 avec attestation de réussite</p>
+                <p>Certifications CCNA 1 et 2 avec attestation de réussite</p>
             </div>
             <div class="skill-card animate-on-scroll">
+                <img src="https://img.icons8.com/ios-filled/50/ffe100/virtual-machine.png" alt="Virtualisation">
                 <h3>Outils de virtualisation et réseaux</h3>
                 <p>VirtualBox, VMWare, Cisco Packet Tracer</p>
             </div>
             <div class="skill-card animate-on-scroll">
+                <img src="https://img.icons8.com/ios-filled/50/ffe100/router.png" alt="Réseaux">
                 <h3>Réseaux</h3>
-                <p>Configuration d'un réseau à partir d'un cahier des charges, j'ai pricipalement travailler avec du matériel Cisco.</p>
+                <p>Configuration d’un réseau avec du matériel Cisco.</p>
             </div>
             <div class="skill-card animate-on-scroll">
+                <img src="https://img.icons8.com/ios-filled/50/ffe100/ms-word.png" alt="Microsoft Word">
                 <h3>Pack Office</h3>
-                <p>Durant mon parcours scolaire, j'ai eu l'occasion de me former à l'usage du Pack Office.</p>
+                <p>Formation complète à l’usage du Pack Office.</p>
             </div>
         </div>
     </section>
-<!--
+
+    <section id="certifications" class="animate-on-scroll">
+        <h2 style="color: var(--secondary-color); font-size: 2.5rem; margin-bottom: 2rem;">Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card" onclick="openModal('ccna1')">
+                <img src="C:\Users\happi\Documents\SITE\Portfolio\images\ccna1.png" alt="Certificat CCNA">
+                <h3>Introduction au réseau – CCNA 1</h3>
+                <p>Attestation obtenue sur Cisco Networking Academy.</p>
+                <p class="click-more">Cliquez pour voir plus</p>
+            </div>
+            <div class="cert-card" onclick="openModal('ccna2')">
+                <img src="C:\Users\happi\Documents\SITE\Portfolio\images\ccna2.png" alt="Certificat CCNA 2">
+                <h3>Principes de routage et commutation – CCNA 2</h3>
+                <p>Attestation obtenue sur Cisco Networking Academy.</p>
+                <p class="click-more">Cliquez pour voir plus</p>
+            </div>
+            <div class="cert-card" onclick="openModal('cyber')">
+                <img src="C:\Users\happi\Documents\SITE\Portfolio\images\intro_cyber.png" alt="Certificat Cybersécurité Essentials">
+                <h3>Cybersécurité Essentials</h3>
+                <p>Formation sur les fondamentaux de la cybersécurité.</p>
+                <p class="click-more">Cliquez pour voir plus</p>
+            </div>
+        </div>
+    
+        <!-- Modal (Fenêtre Pop-Up) -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!--
     <section id="projects">
         <h2>Projets</h2>
         <div class="projects-grid">
@@ -302,13 +529,14 @@
             </div>
         </div>
     </section>
--->
+    -->
+
     <section id="contact" class="contact">
         <h2>Contact</h2>
         <p>N'hésitez pas à me contacter pour discuter de projets ou d'opportunités.</p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/samuel-happi-yamdje/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="happiyamdjes@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:happiyamdjes@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
     </section>
 
