@@ -1,574 +1,931 @@
-<script src="script.js"></script>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Samuel Happi Yamdje</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #0a192f;
-            --secondary-color: #ffe100;
-            --text-color: #ffffff;
-            --heading-color: #ccd6f6;
-            --bg-color: #1c1c1c;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Samuel HAPPI YAMDJE — Cybersécurité & Réseaux</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0c0f;
+      --surface: #111418;
+      --surface2: #181c22;
+      --accent: #00e5ff;
+      --accent2: #7b5ea7;
+      --text: #e8ecf0;
+      --muted: #6b7280;
+      --border: rgba(0,229,255,0.12);
+      --glow: rgba(0,229,255,0.15);
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            font-family: 'Calibre', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
+    html { scroll-behavior: smooth; }
 
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            width: 100%;
-            padding: 1rem;
-            background-color: rgba(10, 25, 47, 0.85);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Mono', monospace;
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-        .navbar.scrolled {
-            padding: 0.5rem 1rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
+    /* — NOISE OVERLAY — */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
 
-        nav ul {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            list-style: none;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+    /* — GRID BACKGROUND — */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        nav a {
-            color: var(--heading-color);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            margin: 0 0.5rem;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-        }
+    /* — NAV — */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      background: rgba(10,12,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
 
-        nav a:hover {
-            color: var(--secondary-color);
-        }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
 
-        /* Sections */
-        section {
-            min-height: 80vh;
-            padding: 60px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
 
-        section:nth-child(even) {
-            background: linear-gradient(180deg, #1c1c1c 0%, #0a192f 100%);
-        }
+    /* — SECTIONS — */
+    section { position: relative; z-index: 1; }
 
-        /* Hero Section */
-        .hero {
-            background: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7') no-repeat center center/cover;
-            padding-top: 150px;
-            position: relative;
-            color: var(--text-color);
-        }
+    /* — HERO — */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 6rem 4rem 4rem;
+      gap: 4rem;
+    }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 25, 47, 0.7);
-            z-index: 0;
-        }
+    .hero-content { flex: 1; }
 
-        .hero h1,
-        .hero p,
-        .hero .cv-button {
-            position: relative;
-            z-index: 1;
-        }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.8rem;
+      border-radius: 2px;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
 
-        .hero h1 {
-            font-size: 4rem;
-            color: var(--heading-color);
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.3rem;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
 
-        .hero p {
-            font-size: 1.5rem;
-            max-width: 600px;
-            animation: fadeInUp 1s ease 0.2s;
-            animation-fill-mode: backwards;
-        }
+    h1 .last-name {
+      color: var(--accent);
+      display: block;
+    }
 
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+    .hero-sub {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.7s ease 0.2s both;
+    }
 
-        .skill-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-            text-align: center;
-        }
+    .hero-desc {
+      max-width: 520px;
+      color: #9ca3af;
+      font-size: 0.88rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.7s ease 0.3s both;
+    }
 
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s ease 0.4s both;
+    }
 
-        .skill-card img {
-            width: 40px;
-            margin-bottom: 1rem;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.75rem 1.6rem;
+      border-radius: 3px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
 
-        .skill-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      font-weight: 500;
+    }
+    .btn-primary:hover {
+      background: #fff;
+      box-shadow: 0 0 24px var(--glow);
+    }
 
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: var(--glow);
+    }
 
-        .project-card {
-            position: relative;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 2rem;
-            transition: transform 1s ease;
-            overflow: hidden;
-        }
+    /* HERO VISUAL */
+    .hero-visual {
+      flex-shrink: 0;
+      width: 340px;
+      animation: fadeUp 0.7s ease 0.5s both;
+    }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
+    .terminal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(0,229,255,0.08);
+    }
 
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--secondary-color);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
+    .terminal-bar {
+      background: var(--surface2);
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
 
-        .project-card:hover::before {
-            transform: scaleX(1);
-        }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
 
-        /* Contact Section */
-        .contact {
-            text-align: center;
-        }
+    .terminal-title {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-left: 0.5rem;
+      letter-spacing: 0.05em;
+    }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
+    .terminal-body {
+      padding: 1.2rem 1.4rem;
+      font-size: 0.8rem;
+      line-height: 1.9;
+    }
 
-        .social-links a {
-            color: var(--heading-color);
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
+    .t-prompt { color: var(--accent); }
+    .t-cmd { color: var(--text); }
+    .t-out { color: var(--muted); }
+    .t-val { color: #a5f3a5; }
+    .t-key { color: #fbbf24; }
+    .t-cursor {
+      display: inline-block;
+      width: 8px;
+      height: 14px;
+      background: var(--accent);
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
 
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    /* — SECTION HEADER — */
+    .section-header {
+      margin-bottom: 3rem;
+    }
 
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
+    .section-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
 
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
 
-        /* CV Download Button */
-        .cv-button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 1rem 2rem;
-            background: transparent;
-            border: 1px solid var(--secondary-color);
-            color: var(--secondary-color);
-            text-decoration: none;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
+    h2 span { color: var(--accent); }
 
-        .cv-button:hover {
-            background: rgba(100, 255, 218, 0.1);
-        }
+    /* — SKILLS — */
+    #skills {
+      padding: 6rem 4rem;
+      border-top: 1px solid var(--border);
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
 
-            .hero p {
-                font-size: 1.2rem;
-            }
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.8rem;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
 
-            nav ul {
-                justify-content: center;
-            }
-        }
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
 
-/* Image certification */
-        .modal {
-            display: none; /* Masqué par défaut */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.7); /* Fond sombre */
-            padding-top: 60px;
-        }
+    .skill-card:hover { border-color: rgba(0,229,255,0.3); transform: translateY(-3px); }
+    .skill-card:hover::before { opacity: 1; }
 
-        .modal-content {
-            background: rgba(10, 25, 47, 0.747);
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Largeur de la fenêtre modal */
-            max-width: 600px;
-            border-radius: 8px;
-        }
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
 
-        .close-btn {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+    .skill-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.02em;
+    }
 
-        .close-btn:hover,
-        .close-btn:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+    .skill-card p { font-size: 0.82rem; color: var(--muted); }
 
-        /* Animation d'apparition pour le modal */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
 
-        .modal-content {
-            animation: fadeIn 0.5s ease;
-        }
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: var(--surface2);
+      letter-spacing: 0.05em;
+    }
 
-        /* Limiter la taille des images dans le modal */
-        .modal-img {
-            max-width: 100%;   /* L'image ne dépassera pas la largeur du modal */
-            height: auto;      /* Maintenir les proportions de l'image */
-            margin-bottom: 20px;
-        }
+    /* — EXPERIENCE — */
+    #experience {
+      padding: 6rem 4rem;
+      border-top: 1px solid var(--border);
+    }
 
+    .timeline { position: relative; }
 
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
 
-        #certifications {
-            padding: 100px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
+    .exp-item {
+      padding: 0 0 3rem 2.5rem;
+      position: relative;
+    }
 
-            .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -4px;
+      top: 6px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
 
-            .cert-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            padding: 2rem;
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .exp-date {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
 
-            .cert-card:hover {
-            transform: translateY(-5px);
-        }
+    .exp-item h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.1rem;
+    }
 
-            .cert-card img {
-            width: 50px;
-            margin-bottom: 1rem;
-        }
+    .exp-company {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
 
-            .cert-card h3 {
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
+    .exp-item ul {
+      list-style: none;
+      padding: 0;
+    }
 
-            .cert-card p {
-            font-size: 0.95rem;
-            color: var(--heading-color);
-        }
+    .exp-item ul li {
+      font-size: 0.83rem;
+      color: #9ca3af;
+      padding: 0.2rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
 
-        
-        /* Style de la grille des certifications */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
+    .exp-item ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
 
-    
-        /* Texte incitatif en bas de la carte */
-        .click-more {
-            color: #ff9f00; /* Jaune-orangé */
-            font-size: 1rem;
-            margin-top: 0.5rem;
-            text-align: center;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+    /* — FORMATION — */
+    #formation {
+      padding: 6rem 4rem;
+      border-top: 1px solid var(--border);
+    }
 
-        .click-more:hover {
-            color: var(--secondary-color); /* Changer la couleur au survol */
-        }
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
 
+    .edu-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.8rem;
+      transition: all 0.25s;
+    }
 
+    .edu-card:hover {
+      border-color: rgba(0,229,255,0.3);
+    }
 
+    .edu-year {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
 
+    .edu-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
+    }
 
-    </style>
+    .edu-school {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .edu-card ul {
+      list-style: none;
+    }
+
+    .edu-card ul li {
+      font-size: 0.78rem;
+      color: #6b7280;
+      padding: 0.15rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .edu-card ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* — CONTACT — */
+    #contact {
+      padding: 6rem 4rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-info { }
+
+    .contact-desc {
+      font-size: 0.88rem;
+      color: #9ca3af;
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    .contact-items { display: flex; flex-direction: column; gap: 1rem; }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.82rem;
+    }
+
+    .contact-item-icon {
+      width: 36px; height: 36px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .contact-item a:hover { color: var(--accent); }
+
+    /* alternance highlight */
+    .alternance-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 1.8rem;
+    }
+
+    .alternance-card h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .alternance-detail {
+      font-size: 0.82rem;
+      color: #9ca3af;
+      line-height: 1.8;
+    }
+
+    .alternance-badge {
+      display: inline-block;
+      background: rgba(0,229,255,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,255,0.3);
+      padding: 0.2rem 0.7rem;
+      border-radius: 2px;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      margin-top: 0.8rem;
+    }
+
+    /* — FOOTER — */
+    footer {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* — ANIMATIONS — */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* — RESPONSIVE — */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      #hero { flex-direction: column; padding: 5rem 1.5rem 3rem; gap: 2rem; }
+      .hero-visual { width: 100%; }
+      #skills, #experience, #formation, #contact { padding: 4rem 1.5rem; }
+      .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#about">À propos</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
 
-    <section id="home" class="hero">
-        <h1>Samuel Happi Yamdje</h1>
-        <p>Étudiant en cybersécurité</p>
-    <a href="CV_HAPPI YAMDJE Samuel.pdf" class="cv-button" download>Télécharger mon CV</a>
-    </section>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SHY</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#experience">Expériences</a></li>
+    <li><a href="#formation">Formation</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <section id="about" class="animate-on-scroll">
-        <h2 style="color: var(--secondary-color); font-size: 2.5rem; margin-bottom: 1rem;">À Propos</h2>
-        <div style="max-width: 800px; margin: 0 auto; line-height: 1.8; font-size: 1.1rem;">
-            <p style="margin-bottom: 1.5rem;">
-                Je m'appelle <strong>Samuel Happi Yamdje</strong>, étudiant passionné par la cybersécurité et les technologies du cloud. 
-                Actuellement en fin de Licence Professionnelle, je poursuis mon parcours en intégrant un <strong>Mastère en Cybersécurité et Cloud Computing</strong> en alternance.
-            </p>
-            <p style="margin-bottom: 1.5rem;">
-                Autonome, rigoureux et toujours curieux d’en apprendre davantage, je m’intéresse particulièrement aux <strong>enjeux de gouvernance en cybersécurité</strong>, 
-                à la protection des systèmes d'information et à la sécurité réseau.
-            </p>
-            <p style="margin-bottom: 1.5rem;">
-                J’ai pu consolider mes compétences techniques à travers divers projets académiques et travaux pratiques, notamment autour de <strong>l’analyse des failles de sécurité</strong>, 
-                de la configuration des réseaux, et du dépannage informatique.
-            </p>
-            <p>
-                <strong>Mon objectif :</strong> contribuer activement à la <strong>sécurisation des systèmes et des données</strong> tout en continuant à évoluer dans un environnement stimulant, 
-                au contact de professionnels du secteur.
-            </p>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+    <span class="hero-tag">// Disponible en alternance · Sept. 2026</span>
+    <h1>
+      Samuel
+      <span class="last-name">Happi Yamdje</span>
+    </h1>
+    <p class="hero-sub">Cybersécurité &amp; Réseaux</p>
+    <p class="hero-desc">
+      Futur expert en cybersécurité, réseaux et cloud computing.
+      Passionné par la sécurité offensive, la gestion des vulnérabilités
+      et la protection des infrastructures. À la recherche d'une alternance
+      de 24 mois à partir de septembre 2026.
+    </p>
+    <div class="hero-ctas">
+      <a href="mailto:happiyamdjes@gmail.com" class="btn btn-primary">Me contacter</a>
+      <a href="https://www.linkedin.com/in/samuel-happi-yamdje/" target="_blank" class="btn btn-outline">LinkedIn →</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="terminal">
+      <div class="terminal-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <span class="terminal-title">whoami.sh</span>
+      </div>
+      <div class="terminal-body">
+        <div><span class="t-prompt">▶</span> <span class="t-cmd">cat profile.json</span></div>
+        <div class="t-out">{</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-val">"Samuel H. Yamdje"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-val">"Cybersécurité"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-val">"Cergy, FR"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"status"</span>: <span class="t-val">"Open to work"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"rythme"</span>: <span class="t-val">"1s/3e"</span>,</div>
+        <div>&nbsp;&nbsp;<span class="t-key">"start"</span>: <span class="t-val">"Sept 2026"</span></div>
+        <div class="t-out">}</div>
+        <br/>
+        <div><span class="t-prompt">▶</span> <span class="t-cursor"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header reveal">
+    <p class="section-tag">// 01 — Compétences</p>
+    <h2>Ce que je <span>maîtrise</span></h2>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">🖥️</div>
+      <h3>Administration des Systèmes</h3>
+      <p>Gestion de serveurs, droits utilisateurs et sécurisation des accès sous environnements Windows et Linux.</p>
+      <div class="tags">
+        <span class="tag">Windows Server</span>
+        <span class="tag">Active Directory</span>
+        <span class="tag">Gestion des privilèges</span>
+        <span class="tag">Linux</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">🌐</div>
+      <h3>Réseaux</h3>
+      <p>Configuration et sécurisation d'infrastructures réseau, analyse de flux et dépannage avancé.</p>
+      <div class="tags">
+        <span class="tag">TCP/IP</span>
+        <span class="tag">DHCP / DNS</span>
+        <span class="tag">HTTP/HTTPS / SSH</span>
+        <span class="tag">Firewall / VPN</span>
+        <span class="tag">Wireshark</span>
+        <span class="tag">VMware</span>
+        <span class="tag">Hyper-V</span>
+        <span class="tag">VLANs</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">🛡️</div>
+      <h3>Cybersécurité</h3>
+      <p>Détection et analyse de vulnérabilités (CVSS), sécurisation des accès et supervision des infrastructures.</p>
+      <div class="tags">
+        <span class="tag">CVSS / CVE</span>
+        <span class="tag">Contrôle d'accès</span>
+        <span class="tag">Adressage IP</span>
+        <span class="tag">Patch Management</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">🗄️</div>
+      <h3>Base de Données &amp; Scripting</h3>
+      <p>Gestion de bases de données relationnelles et automatisation via Python.</p>
+      <div class="tags">
+        <span class="tag">Live SQL Oracle</span>
+        <span class="tag">Python</span>
+        <span class="tag">Bash</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">⚙️</div>
+      <h3>En cours d'acquisition</h3>
+      <p>Technologies cloud, conteneurisation et pentest pour l'infrastructure moderne.</p>
+      <div class="tags">
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">Cloud Computing</span>
+        <span class="tag">Pentest</span>
+        <span class="tag">Gestion des risques</span>
+      </div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-icon">🎬</div>
+      <h3>Audiovisuel &amp; Création Digitale</h3>
+      <p>Création de contenu digital pour l'association Eglisemdp : montage vidéo, graphisme et photographie.</p>
+      <div class="tags">
+        <span class="tag">Premiere Pro</span>
+        <span class="tag">Canva</span>
+        <span class="tag">Photographie</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header reveal">
+    <p class="section-tag">// 02 — Expériences</p>
+    <h2>Mon <span>parcours</span></h2>
+  </div>
+
+  <div class="timeline">
+
+    <div class="exp-item reveal">
+      <div class="exp-date">06.2025 – 07.2025</div>
+      <h3>Technicien Réseau Stagiaire</h3>
+      <div class="exp-company">Soumar Boutique · Villemomble</div>
+      <ul>
+        <li>Installation et configuration d'équipements réseau (switchs, routeurs, AP)</li>
+        <li>Segmentation réseau (VLAN, adressage IP) et déploiement de services (DHCP, DNS)</li>
+        <li>Sécurisation du SI (pare-feu, gestion des accès, bonnes pratiques)</li>
+        <li>Diagnostic et résolution d'incidents réseau et postes de travail</li>
+      </ul>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">05.2024 – 07.2024</div>
+      <h3>Assistant Cybersécurité Stagiaire</h3>
+      <div class="exp-company">Ondolo System IT · Looze</div>
+      <ul>
+        <li>Administration système et réseau : gestion de serveurs Windows Server, configuration Active Directory, gestion des comptes utilisateurs et permissions</li>
+        <li>Contrôles d'accès et sécurité : mise en place et suivi des droits d'accès, sécurisation des ressources réseau et des données sensibles</li>
+        <li>Support et maintenance : résolution des incidents utilisateurs, supervision de l'infrastructure réseau</li>
+        <li>Gestion des ressources IT : organisation et suivi des matériels et logiciels, optimisation des performances réseau</li>
+      </ul>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">05.2023 – 07.2023</div>
+      <h3>Agent d'Accueil et de Sécurité Stagiaire</h3>
+      <div class="exp-company">Préfecture du Val d'Oise · Cergy</div>
+      <ul>
+        <li>Contrôle d'accès et vérification des identités</li>
+        <li>Surveillance des locaux et gestion des flux</li>
+        <li>Gestion des situations sensibles et incidents</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORMATION -->
+<section id="formation">
+  <div class="section-header reveal">
+    <p class="section-tag">// 03 — Formation</p>
+    <h2>Mon <span>éducation</span></h2>
+  </div>
+
+  <div class="edu-grid">
+    <div class="edu-card reveal">
+      <div class="edu-year">09.2026 → 08.2028</div>
+      <h3>M1/M2 Expert Cybersécurité, Réseaux &amp; Cloud Computing</h3>
+      <div class="edu-school">ENSITECH · Cergy</div>
+      <ul>
+        <li>Cybersécurité avancée (pentest, gestion des risques)</li>
+        <li>Administration systèmes &amp; réseaux (Linux / Cloud)</li>
+        <li>Virtualisation et conteneurisation (Docker, Kubernetes)</li>
+        <li>Automatisation &amp; scripting (Python, Bash)</li>
+        <li>Supervision et sécurisation des infrastructures</li>
+      </ul>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-year">09.2022 → 08.2025</div>
+      <h3>Licence Professionnelle — Réseaux et Cybersécurité</h3>
+      <div class="edu-school">CY Cergy Paris Université · Cergy</div>
+      <ul>
+        <li>Réseaux TCP/IP — Certification Cisco CCNA 1 &amp; 2</li>
+        <li>Introduction à la cybersécurité</li>
+        <li>Programmation en Python</li>
+        <li>Gestion de bases de données</li>
+        <li>Systèmes d'exploitation Linux</li>
+      </ul>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-year">09.2021 → 07.2022</div>
+      <h3>Formation Supérieure — Spécialisation Vidéo Protection</h3>
+      <div class="edu-school">CY Cergy Paris Université · Argenteuil</div>
+      <ul>
+        <li>Installation et configuration de systèmes de vidéoprotection</li>
+        <li>Gestion et exploitation des flux vidéo</li>
+        <li>Maintenance et sécurisation des équipements</li>
+        <li>Connaissance des normes et réglementations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header reveal">
+    <p class="section-tag">// 04 — Contact</p>
+    <h2>Parlons <span>alternance</span></h2>
+  </div>
+
+  <div class="contact-layout">
+    <div class="contact-info reveal">
+      <p class="contact-desc">
+        Je recherche une alternance de 24 mois en cybersécurité, réseaux ou cloud computing,
+        avec un rythme de 1 semaine en formation / 3 semaines en entreprise,
+        à partir de septembre 2026.
+      </p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.1rem">Téléphone</div>
+            <a href="tel:0749470595">07.49.47.05.95</a>
+          </div>
         </div>
-    </section>
-    
-
-    <section id="skills">
-        <h2>Compétences</h2>
-        <div class="skills-grid">
-            <div class="skill-card animate-on-scroll">
-                <img src="https://img.icons8.com/ios-filled/50/ffe100/server.png" alt="Système">
-                <h3>Administration systèmes</h3>
-                <p>Windows Server, Gestion des privilèges, Linux</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <img src="https://img.icons8.com/ios-filled/50/ffe100/database.png" alt="Base de données">
-                <h3>Base de données</h3>
-                <p>Live SQL Oracle</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <img src="https://img.icons8.com/ios-filled/50/ffe100/network-card.png" alt="CCNA">
-                <h3>CCNA</h3>
-                <p>Certifications CCNA 1 et 2 avec attestation de réussite</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <img src="https://img.icons8.com/ios-filled/50/ffe100/virtual-machine.png" alt="Virtualisation">
-                <h3>Outils de virtualisation et réseaux</h3>
-                <p>VirtualBox, VMWare, Cisco Packet Tracer</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <img src="https://img.icons8.com/ios-filled/50/ffe100/router.png" alt="Réseaux">
-                <h3>Réseaux</h3>
-                <p>Configuration d’un réseau avec du matériel Cisco.</p>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <img src="https://img.icons8.com/ios-filled/50/ffe100/ms-word.png" alt="Microsoft Word">
-                <h3>Pack Office</h3>
-                <p>Formation complète à l’usage du Pack Office.</p>
-            </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.1rem">Email</div>
+            <a href="mailto:happiyamdjes@gmail.com">happiyamdjes@gmail.com</a>
+          </div>
         </div>
-    </section>
-
-    <section id="certifications" class="animate-on-scroll">
-        <h2 style="color: var(--secondary-color); font-size: 2.5rem; margin-bottom: 2rem;">Certifications</h2>
-        <div class="cert-grid">
-            <div class="cert-card" onclick="openModal('ccna1')">
-                <img src="ccna1.png" alt="Certificat CCNA">
-                <h3>Introduction au réseau – CCNA 1</h3>
-                <p>Attestation obtenue sur Cisco Networking Academy.</p>
-                <p class="click-more">Cliquez pour voir plus</p>
-            </div>
-            <div class="cert-card" onclick="openModal('ccna2')">
-                <img src="ccna2.png" alt="Certificat CCNA 2">
-                <h3>Principes de routage et commutation – CCNA 2</h3>
-                <p>Attestation obtenue sur Cisco Networking Academy.</p>
-                <p class="click-more">Cliquez pour voir plus</p>
-            </div>
-            <div class="cert-card" onclick="openModal('cyber')">
-                <img src="intro_cyber.png" alt="Certificat Cybersécurité Essentials">
-                <h3>Cybersécurité Essentials</h3>
-                <p>Formation sur les fondamentaux de la cybersécurité.</p>
-                <p class="click-more">Cliquez pour voir plus</p>
-            </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.1rem">Localisation</div>
+            <span>95800, Cergy le Haut</span>
+          </div>
         </div>
-    
-        <!-- Modal (Fenêtre Pop-Up) -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn" onclick="closeModal()">&times;</span>
-                <div id="modal-body"></div>
-            </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">in</div>
+          <div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-bottom:0.1rem">LinkedIn</div>
+            <a href="https://www.linkedin.com/in/samuel-happi-yamdje/" target="_blank">samuel-happi-yamdje</a>
+          </div>
         </div>
-    </section>
-    
+      </div>
+    </div>
 
-
-    <!--
-    <section id="projects">
-        <h2>Projets</h2>
-        <div class="projects-grid">
-            <div class="project-card animate-on-scroll">
-                <h3>Projet 1</h3>
-                <p>Description de votre projet ou CTF réussi</p>
-            </div>
-            <div class="project-card animate-on-scroll">
-                <h3>Projet 2</h3>
-                <p>Description de votre projet ou CTF réussi</p>
-            </div>
+    <div class="reveal">
+      <div class="alternance-card">
+        <h3>🎯 Recherche d'alternance</h3>
+        <div class="alternance-detail">
+          <strong style="color:var(--text)">Formation :</strong> M1/M2 Expert Cybersécurité, Réseaux &amp; Cloud Computing<br/>
+          <strong style="color:var(--text)">École :</strong> ENSITECH, Cergy<br/>
+          <strong style="color:var(--text)">Début :</strong> Septembre 2026<br/>
+          <strong style="color:var(--text)">Durée :</strong> 24 mois<br/>
+          <strong style="color:var(--text)">Rythme :</strong> 1 semaine école / 3 semaines entreprise<br/>
+          <strong style="color:var(--text)">Mobilité :</strong> Permis B — Île-de-France et environs
         </div>
-    </section>
-    -->
+        <div class="alternance-badge">Open to work · Sept. 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p>N'hésitez pas à me contacter pour discuter de projets ou d'opportunités.</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/samuel-happi-yamdje/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:happiyamdjes@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-    </section>
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Samuel Happi Yamdje</span>
+  <span>Built for GitHub Pages</span>
+</footer>
 
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
 
-        // Scroll animation
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.animate-on-scroll').forEach(element => {
-            observer.observe(element);
-        });
-    </script>
 </body>
 </html>
