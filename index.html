@@ -1,633 +1,501 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-
-<!-- ============ SEO ============ -->
-<title>Samuel Happi Yamdje — Alternant BTS NDRC | Objectif : gérant de concession auto</title>
-<meta name="description" content="Portfolio de Samuel Happi Yamdje. Profil relation client & développement commercial issu de la tech (réseaux, cybersécurité, audiovisuel). Candidat en alternance BTS NDRC (Inseec), objectif : diriger une concession automobile. Cergy (95), permis B, véhiculé." />
-<meta name="keywords" content="Samuel Happi Yamdje, alternance BTS NDRC, relation client, développement commercial, concession automobile, vente automobile, Cergy, Inseec, prospection" />
-<meta name="author" content="Samuel Happi Yamdje" />
-<meta name="robots" content="index, follow" />
-<link rel="canonical" href="https://samuel-happi-yamdje.com/" />
-
-<!-- Open Graph -->
-<meta property="og:type" content="profile" />
-<meta property="og:title" content="Samuel Happi Yamdje — Alternant BTS NDRC, objectif concession auto" />
-<meta property="og:description" content="De la cybersécurité à la relation client. Candidat en alternance BTS NDRC, je vise la direction d'une concession automobile." />
-<meta property="og:locale" content="fr_FR" />
-<meta property="og:url" content="https://samuel-happi-yamdje.com/" />
-<meta property="profile:first_name" content="Samuel" />
-<meta property="profile:last_name" content="Happi Yamdje" />
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Samuel Happi Yamdje — Alternant BTS NDRC" />
-<meta name="twitter:description" content="De la cybersécurité à la relation client. Objectif : gérant de concession automobile." />
-
-<meta name="theme-color" content="#05060A" />
-
-<!-- Données structurées (rich results Google) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Samuel Happi Yamdje",
-  "jobTitle": "Alternant BTS NDRC — Relation client & développement commercial",
-  "email": "mailto:happiyamdjes@gmail.com",
-  "telephone": "+33749470595",
-  "url": "https://samuel-happi-yamdje.com/",
-  "sameAs": ["https://www.linkedin.com/in/samuel-happi-yamdje/"],
-  "address": { "@type": "PostalAddress", "addressLocality": "Cergy", "postalCode": "95800", "addressCountry": "FR" },
-  "knowsLanguage": ["fr", "en"],
-  "seeks": { "@type": "Demand", "name": "Alternance BTS NDRC (2 jours en cours / 3 jours en entreprise)" },
-  "alumniOf": [
-    { "@type": "EducationalOrganization", "name": "CY Cergy Paris Université" },
-    { "@type": "EducationalOrganization", "name": "Inseec" }
-  ]
-}
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-<style>
-  :root{
-    --bg-0:#05060A;        /* fond profond */
-    --bg-1:#0B1020;        /* navy profond */
-    --glass:rgba(255,255,255,.055);
-    --glass-2:rgba(255,255,255,.09);
-    --stroke:rgba(255,255,255,.14);
-    --stroke-soft:rgba(255,255,255,.08);
-    --txt:#F5F7FA;
-    --muted:rgba(245,247,250,.62);
-    --faint:rgba(245,247,250,.40);
-    --blue:#4D9BFF;        /* niveau tech */
-    --violet:#A78BFF;      /* niveau commercial */
-    --amber:#FFB44D;       /* niveau concession */
-    --radius:26px;
-    --radius-sm:16px;
-    --max:1120px;
-    --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",system-ui,Roboto,Helvetica,Arial,sans-serif;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111412">
+  <meta name="description" content="Samuel Happi Yamdje, étudiant en BTS NDRC en alternance. Relation client, développement commercial et passion automobile.">
+  <meta name="author" content="Samuel Happi Yamdje">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Samuel Happi Yamdje — Relation client & automobile">
+  <meta property="og:description" content="De la tech au commerce automobile : découvrez mon parcours et mes expériences.">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="canonical" href="https://samuel-happi-yamdje.com/">
+  <title>Samuel Happi Yamdje — Relation client & automobile</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Samuel Happi Yamdje",
+    "jobTitle": "Étudiant en BTS NDRC en alternance",
+    "url": "https://samuel-happi-yamdje.com/",
+    "email": "mailto:happiyamdjes@gmail.com",
+    "telephone": "+33749470595",
+    "sameAs": ["https://www.linkedin.com/in/samuel-happi-yamdje/"],
+    "address": {"@type":"PostalAddress","addressLocality":"Cergy","postalCode":"95800","addressCountry":"FR"},
+    "knowsLanguage": ["fr", "en"],
+    "alumniOf": [
+      {"@type":"EducationalOrganization","name":"CY Cergy Paris Université"},
+      {"@type":"EducationalOrganization","name":"Inseec"}
+    ]
   }
+  </script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111412;
+      --bg-soft: #181c19;
+      --panel: #1d221f;
+      --panel-light: #252b27;
+      --ink: #f4f1e9;
+      --muted: #aaaFA9;
+      --quiet: #7f8780;
+      --line: rgba(244, 241, 233, .13);
+      --accent: #d5f36a;
+      --accent-ink: #19200d;
+      --orange: #f1a56e;
+      --max: 1160px;
+      --radius: 22px;
+      --shadow: 0 24px 70px rgba(0,0,0,.25);
+      --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.65 var(--font); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    img { display: block; max-width: 100%; }
+    .skip-link { position: absolute; top: -60px; left: 16px; z-index: 100; padding: 10px 16px; border-radius: 8px; background: var(--accent); color: var(--accent-ink); font-weight: 700; }
+    .skip-link:focus { top: 16px; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin-inline: auto; }
+    .site-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(244,241,233,.08); background: rgba(17,20,18,.88); backdrop-filter: blur(18px); }
+    .header-inner { display:flex; align-items:center; justify-content:space-between; min-height:76px; gap:28px; }
+    .brand { display:inline-flex; align-items:center; gap:11px; text-decoration:none; font-weight:740; letter-spacing:-.035em; white-space:nowrap; }
+    .brand-mark { display:grid; width:38px; height:38px; place-items:center; border-radius:12px 12px 12px 4px; background:var(--accent); color:var(--accent-ink); font-size:15px; letter-spacing:-.08em; }
+    .brand-name { font-size:15px; }
+    .nav-links { display:flex; align-items:center; gap:28px; margin:0; padding:0; list-style:none; }
+    .nav-links a { color:var(--muted); text-decoration:none; font-size:14px; transition:color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color:var(--ink); }
+    .header-cta, .button { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:0 19px; border:1px solid transparent; border-radius:999px; background:var(--accent); color:var(--accent-ink); font-size:14px; font-weight:760; text-decoration:none; transition:transform .2s ease, background .2s ease, border-color .2s ease; }
+    .header-cta:hover, .button:hover { transform:translateY(-2px); background:#e1ff82; }
+    .menu-toggle { display:none; width:46px; height:46px; border:1px solid var(--line); border-radius:50%; background:transparent; color:var(--ink); cursor:pointer; }
+    .menu-toggle svg { width:20px; height:20px; }
+    :focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    margin:0; background:var(--bg-0); color:var(--txt);
-    font-family:var(--font); line-height:1.5;
-    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    overflow-x:hidden;
-  }
-  a{color:inherit; text-decoration:none}
+    .hero { position:relative; overflow:hidden; padding:92px 0 80px; }
+    .hero::before { position:absolute; top:-250px; right:-190px; width:min(70vw,760px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle, rgba(213,243,106,.11), rgba(213,243,106,0) 67%); content:""; pointer-events:none; }
+    .hero-grid { position:relative; display:grid; grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr); align-items:center; gap:56px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; margin:0 0 22px; color:var(--accent); font-size:12px; font-weight:780; letter-spacing:.13em; text-transform:uppercase; }
+    .eyebrow::before { width:20px; height:1px; background:currentColor; content:""; }
+    h1, h2, h3, p { margin-top:0; }
+    h1 { max-width:760px; margin-bottom:23px; font-size:clamp(48px, 7.4vw, 92px); line-height:.99; letter-spacing:-.075em; font-weight:720; }
+    h1 span { color:var(--accent); }
+    .hero-copy { max-width:620px; margin-bottom:30px; color:var(--muted); font-size:clamp(17px,2vw,20px); }
+    .hero-copy strong { color:var(--ink); font-weight:650; }
+    .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+    .button-secondary { border-color:var(--line); background:transparent; color:var(--ink); }
+    .button-secondary:hover { border-color:rgba(244,241,233,.35); background:var(--panel); }
+    .button svg, .text-link svg { width:17px; height:17px; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:10px 20px; margin-top:31px; color:var(--muted); font-size:13px; }
+    .hero-meta span { display:inline-flex; align-items:center; gap:7px; }
+    .hero-meta svg { width:15px; height:15px; color:var(--accent); }
+    .hero-visual { position:relative; min-height:440px; display:grid; place-items:center; }
+    .visual-frame { position:relative; width:min(100%,420px); aspect-ratio: .88; overflow:hidden; border:1px solid rgba(244,241,233,.14); border-radius:190px 190px 28px 28px; background:radial-gradient(ellipse at 50% 38%,#596544 0,#303a2b 30%,#252b27 61%,#1b201d 100%); box-shadow:var(--shadow); }
+    .visual-frame::before, .visual-frame::after { position:absolute; border:1px solid rgba(213,243,106,.19); border-radius:50%; content:""; }
+    .visual-frame::before { inset:12% 12% 18%; }
+    .visual-frame::after { inset:23% 23% 29%; }
+    .orb { position:absolute; top:19%; left:50%; width:48%; aspect-ratio:1; transform:translateX(-50%); border:1px solid rgba(244,241,233,.44); border-radius:50%; background:radial-gradient(circle at 34% 30%,rgba(244,241,233,.8),rgba(213,243,106,.3) 12%,rgba(17,20,18,.3) 58%,rgba(17,20,18,.85)); box-shadow:inset -20px -20px 48px rgba(0,0,0,.45),0 0 70px rgba(213,243,106,.22); }
+    .orbit { position:absolute; top:35%; left:50%; width:90%; height:40%; transform:translate(-50%,-50%) rotate(-24deg); border:1px solid rgba(244,241,233,.34); border-radius:50%; }
+    .orbit-dot { position:absolute; top:34%; left:8%; width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 20px var(--accent); }
+    .visual-caption { position:absolute; right:24px; bottom:26px; left:24px; display:flex; align-items:end; justify-content:space-between; gap:16px; }
+    .visual-caption small { display:block; color:#bfc5bd; font-size:11px; letter-spacing:.13em; text-transform:uppercase; }
+    .visual-caption strong { display:block; margin-top:4px; font-size:16px; }
+    .visual-index { color:var(--accent); font-size:12px; font-variant-numeric:tabular-nums; }
+    .floating-note { position:absolute; right:-14px; bottom:58px; width:170px; padding:15px; border:1px solid rgba(244,241,233,.16); border-radius:16px; background:rgba(29,34,31,.9); box-shadow:var(--shadow); }
+    .floating-note strong { display:block; color:var(--accent); font-size:25px; line-height:1.1; letter-spacing:-.06em; }
+    .floating-note span { display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.4; }
 
-  /* === Ambiance de fond : nappes de couleur qui dérivent au scroll === */
-  .ambient{position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden}
-  .ambient .blob{
-    position:absolute; border-radius:50%; filter:blur(90px); opacity:.55;
-    transition:background .9s ease, transform .9s ease;
-  }
-  .blob.b1{width:60vmax; height:60vmax; top:-20vmax; left:-12vmax; background:radial-gradient(circle at 30% 30%,var(--blue),transparent 60%)}
-  .blob.b2{width:55vmax; height:55vmax; bottom:-22vmax; right:-15vmax; background:radial-gradient(circle at 60% 40%,var(--violet),transparent 60%); opacity:.40}
-  .blob.b3{width:40vmax; height:40vmax; top:35%; left:45%; background:radial-gradient(circle at 50% 50%,var(--amber),transparent 62%); opacity:.18}
-  .grain{position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.04;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .metrics { position:relative; z-index:1; border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--bg-soft); }
+    .metrics-grid { display:grid; grid-template-columns:repeat(3,1fr); }
+    .metric { display:flex; align-items:center; gap:15px; min-height:112px; padding:20px 32px; border-right:1px solid var(--line); }
+    .metric:first-child { padding-left:0; }
+    .metric:last-child { border-right:0; }
+    .metric strong { color:var(--accent); font-size:35px; line-height:1; letter-spacing:-.07em; font-variant-numeric:tabular-nums; }
+    .metric span { max-width:140px; color:var(--muted); font-size:13px; line-height:1.4; }
 
-  /* Canvas 3D fixe derrière le contenu */
-  #scene{position:fixed; inset:0; z-index:2; pointer-events:none}
+    .section { padding:112px 0; }
+    .section-alt { background:var(--bg-soft); }
+    .section-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(250px,.55fr); align-items:end; gap:36px; margin-bottom:47px; }
+    .section-label { margin-bottom:12px; color:var(--accent); font-size:12px; font-weight:780; letter-spacing:.14em; text-transform:uppercase; }
+    h2 { margin-bottom:0; font-size:clamp(34px,5.2vw,58px); line-height:1.05; letter-spacing:-.065em; font-weight:690; }
+    .section-intro { margin-bottom:3px; color:var(--muted); font-size:16px; }
+    .about-grid { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr); gap:18px; }
+    .about-card { min-height:280px; padding:34px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); }
+    .about-card h3 { margin-bottom:16px; font-size:21px; letter-spacing:-.04em; }
+    .about-card p { max-width:680px; margin-bottom:16px; color:var(--muted); }
+    .about-card p:last-child { margin-bottom:0; }
+    .about-card strong { color:var(--ink); }
+    .about-aside { display:grid; gap:18px; }
+    .principle { display:flex; flex-direction:column; justify-content:space-between; min-height:130px; padding:25px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel-light); }
+    .principle span { color:var(--quiet); font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+    .principle strong { max-width:320px; font-size:20px; line-height:1.25; letter-spacing:-.04em; }
 
-  .wrap{position:relative; z-index:3}
-  .container{max-width:var(--max); margin:0 auto; padding:0 24px}
+    .story-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .story-card { display:flex; min-height:292px; flex-direction:column; padding:26px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); transition:transform .22s ease,border-color .22s ease; }
+    .story-card:hover { transform:translateY(-4px); border-color:rgba(213,243,106,.5); }
+    .story-number { display:grid; width:42px; height:42px; place-items:center; margin-bottom:38px; border-radius:14px; background:rgba(213,243,106,.1); color:var(--accent); font-size:13px; font-weight:760; }
+    .story-card h3 { margin-bottom:10px; font-size:20px; line-height:1.2; letter-spacing:-.04em; }
+    .story-card p { margin-bottom:20px; color:var(--muted); font-size:14px; }
+    .story-tag { margin-top:auto; color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
 
-  /* ===== Verre liquide ===== */
-  .glass{
-    background:var(--glass);
-    border:1px solid var(--stroke-soft);
-    border-radius:var(--radius);
-    backdrop-filter:blur(22px) saturate(160%);
-    -webkit-backdrop-filter:blur(22px) saturate(160%);
-    box-shadow:0 1px 0 rgba(255,255,255,.10) inset, 0 24px 60px -28px rgba(0,0,0,.8);
-  }
+    .timeline { position:relative; display:grid; gap:0; }
+    .timeline::before { position:absolute; top:8px; bottom:8px; left:130px; width:1px; background:var(--line); content:""; }
+    .timeline-item { position:relative; display:grid; grid-template-columns:105px 1fr; gap:52px; padding:0 0 34px; }
+    .timeline-item:last-child { padding-bottom:0; }
+    .timeline-item::before { position:absolute; top:6px; left:125px; width:11px; height:11px; border:2px solid var(--accent); border-radius:50%; background:var(--bg-soft); content:""; }
+    .timeline-date { color:var(--quiet); font-size:12px; font-weight:700; letter-spacing:.05em; }
+    .timeline-content { padding:0 0 23px; border-bottom:1px solid var(--line); }
+    .timeline-item:last-child .timeline-content { padding-bottom:0; border-bottom:0; }
+    .timeline-title { margin-bottom:5px; font-size:18px; font-weight:680; letter-spacing:-.025em; }
+    .timeline-org { margin-bottom:7px; color:var(--accent); font-size:13px; font-weight:650; }
+    .timeline-content p { margin-bottom:0; color:var(--muted); font-size:14px; }
 
-  /* ===== Nav (pilule flottante) ===== */
-  nav{position:fixed; top:18px; left:0; right:0; z-index:40; display:flex; justify-content:center; padding:0 16px}
-  .nav-pill{
-    display:flex; align-items:center; gap:6px; padding:8px 8px 8px 18px;
-    border-radius:999px; background:rgba(12,16,28,.55); border:1px solid var(--stroke);
-    backdrop-filter:blur(26px) saturate(180%); -webkit-backdrop-filter:blur(26px) saturate(180%);
-    box-shadow:0 1px 0 rgba(255,255,255,.12) inset, 0 14px 40px -18px rgba(0,0,0,.9);
-    max-width:100%;
-  }
-  .nav-name{font-weight:600; letter-spacing:-.01em; font-size:15px; white-space:nowrap; margin-right:8px}
-  .nav-links{display:flex; gap:2px}
-  .nav-links a{padding:8px 14px; border-radius:999px; font-size:14px; color:var(--muted); transition:.25s; white-space:nowrap}
-  .nav-links a:hover{color:var(--txt); background:var(--glass-2)}
-  .nav-cta{padding:9px 16px; border-radius:999px; font-size:14px; font-weight:600;
-    background:linear-gradient(135deg,var(--blue),var(--violet)); color:#fff; transition:transform .25s}
-  .nav-cta:hover{transform:translateY(-1px)}
-  @media(max-width:760px){ .nav-links{display:none} }
+    .skills-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .skill-card { min-height:235px; padding:27px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); }
+    .skill-icon { display:grid; width:43px; height:43px; place-items:center; margin-bottom:23px; border-radius:14px; background:rgba(213,243,106,.1); color:var(--accent); }
+    .skill-icon svg { width:21px; height:21px; }
+    .skill-card h3 { margin-bottom:9px; font-size:19px; letter-spacing:-.035em; }
+    .skill-card p { margin-bottom:0; color:var(--muted); font-size:14px; }
+    .tag-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:17px; }
+    .tag { padding:6px 10px; border:1px solid var(--line); border-radius:999px; color:var(--muted); font-size:11px; }
 
-  /* ===== Hero ===== */
-  header{min-height:100svh; display:flex; align-items:center; padding:120px 0 80px; position:relative}
-  .eyebrow{display:inline-flex; align-items:center; gap:9px; font-size:13px; letter-spacing:.02em;
-    color:var(--muted); padding:8px 16px; border-radius:999px; margin-bottom:26px}
-  .dot{width:8px; height:8px; border-radius:50%; background:var(--blue); box-shadow:0 0 14px var(--blue)}
-  h1{font-size:clamp(44px,8.5vw,108px); line-height:.96; font-weight:700; letter-spacing:-.035em; margin:0 0 22px;
-    background:linear-gradient(180deg,#fff 0%, #cdd6e6 100%); -webkit-background-clip:text; background-clip:text; color:transparent}
-  .lede{font-size:clamp(18px,2.4vw,24px); color:var(--muted); max-width:620px; font-weight:420; letter-spacing:-.01em}
-  .lede b{color:var(--txt); font-weight:600}
-  .hero-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:38px}
-  .btn{display:inline-flex; align-items:center; gap:9px; padding:14px 24px; border-radius:999px; font-weight:600;
-    font-size:15px; transition:transform .25s, box-shadow .25s; cursor:pointer; border:1px solid transparent}
-  .btn-p{background:linear-gradient(135deg,var(--blue),var(--violet)); color:#fff;
-    box-shadow:0 14px 40px -16px var(--blue)}
-  .btn-p:hover{transform:translateY(-2px); box-shadow:0 18px 46px -14px var(--violet)}
-  .btn-g{background:var(--glass); border-color:var(--stroke); color:var(--txt); backdrop-filter:blur(18px)}
-  .btn-g:hover{transform:translateY(-2px); background:var(--glass-2)}
-  .hero-meta{display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:34px; color:var(--faint); font-size:14px}
-  .hero-meta span{display:inline-flex; align-items:center; gap:7px}
+    .education-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .education-card { position:relative; min-height:190px; padding:27px; overflow:hidden; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); }
+    .education-card.current { border-color:rgba(213,243,106,.45); background:linear-gradient(135deg,rgba(213,243,106,.08),transparent 75%),var(--panel); }
+    .education-date { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:19px; color:var(--quiet); font-size:12px; font-weight:720; letter-spacing:.06em; text-transform:uppercase; }
+    .current-label { padding:5px 9px; border-radius:99px; background:var(--accent); color:var(--accent-ink); font-size:10px; letter-spacing:.08em; }
+    .education-card h3 { max-width:500px; margin-bottom:8px; font-size:20px; line-height:1.2; letter-spacing:-.04em; }
+    .education-card p { margin-bottom:0; color:var(--muted); font-size:14px; }
+    .badges { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+    .badge-card { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:230px; padding:23px 16px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); text-align:center; }
+    .badge-card img { width:112px; height:112px; margin-bottom:16px; border-radius:16px; }
+    .badge-card strong { font-size:14px; line-height:1.35; }
+    .badge-card span { margin-top:5px; color:var(--muted); font-size:12px; }
 
-  /* ===== Rail de niveaux (signature) ===== */
-  .rail{position:fixed; right:26px; top:50%; transform:translateY(-50%); z-index:30;
-    display:flex; flex-direction:column; gap:14px}
-  .rail-item{display:flex; align-items:center; gap:10px; justify-content:flex-end; opacity:.55; transition:opacity .35s}
-  .rail-item.on{opacity:1}
-  .rail-label{font-size:12px; letter-spacing:.04em; text-transform:uppercase; color:var(--muted);
-    padding:6px 12px; border-radius:999px; background:rgba(12,16,28,.5); border:1px solid var(--stroke-soft);
-    backdrop-filter:blur(14px); opacity:0; transform:translateX(8px); transition:.35s; white-space:nowrap}
-  .rail-item.on .rail-label{opacity:1; transform:translateX(0)}
-  .rail-tick{width:11px; height:11px; border-radius:50%; background:var(--faint); transition:.35s; flex:none}
-  .rail-item.on .rail-tick{background:var(--c); box-shadow:0 0 14px var(--c); transform:scale(1.25)}
-  @media(max-width:1180px){ .rail{display:none} }
+    .goal-panel { position:relative; overflow:hidden; padding:55px; border:1px solid rgba(213,243,106,.25); border-radius:30px; background:radial-gradient(ellipse at 100% 0%,rgba(213,243,106,.12),transparent 42%),var(--panel); }
+    .goal-panel h2 { max-width:720px; margin-bottom:17px; }
+    .goal-panel > p { max-width:720px; margin-bottom:35px; color:var(--muted); font-size:17px; }
+    .goal-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .goal-step { min-height:142px; padding:20px; border:1px solid var(--line); border-radius:17px; background:rgba(17,20,18,.56); }
+    .goal-step span { color:var(--accent); font-size:11px; font-weight:760; letter-spacing:.12em; text-transform:uppercase; }
+    .goal-step strong { display:block; margin:10px 0 6px; font-size:17px; letter-spacing:-.03em; }
+    .goal-step p { margin:0; color:var(--muted); font-size:13px; }
 
-  /* ===== Sections ===== */
-  section{padding:96px 0; position:relative}
-  .kicker{display:inline-flex; align-items:center; gap:10px; font-size:13px; letter-spacing:.08em;
-    text-transform:uppercase; color:var(--muted); margin-bottom:18px}
-  .kicker .lvl{font-variant-numeric:tabular-nums; color:var(--c, var(--blue)); font-weight:700}
-  h2{font-size:clamp(30px,5vw,52px); font-weight:680; letter-spacing:-.03em; margin:0 0 18px; line-height:1.04}
-  .section-lede{color:var(--muted); font-size:clamp(16px,2vw,19px); max-width:620px; margin-bottom:46px}
+    .contact-grid { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:50px; }
+    .contact-copy h2 { max-width:480px; margin-bottom:17px; }
+    .contact-copy > p { max-width:460px; color:var(--muted); }
+    .contact-links { display:grid; gap:11px; margin-top:30px; }
+    .contact-link { display:flex; align-items:center; gap:13px; text-decoration:none; }
+    .contact-link-icon { display:grid; width:42px; height:42px; flex:none; place-items:center; border:1px solid var(--line); border-radius:14px; color:var(--accent); }
+    .contact-link-icon svg { width:18px; height:18px; }
+    .contact-link small, .contact-link strong { display:block; }
+    .contact-link small { color:var(--quiet); font-size:11px; }
+    .contact-link strong { font-size:14px; font-weight:650; }
+    .contact-form { display:grid; gap:14px; padding:27px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); }
+    .field { display:grid; gap:6px; }
+    .field label { color:var(--muted); font-size:12px; font-weight:650; }
+    .field input, .field textarea { width:100%; min-height:49px; padding:12px 14px; border:1px solid var(--line); border-radius:12px; background:var(--bg-soft); color:var(--ink); }
+    .field textarea { min-height:120px; resize:vertical; }
+    .field input::placeholder, .field textarea::placeholder { color:var(--quiet); }
+    .field input:focus, .field textarea:focus { border-color:var(--accent); outline:2px solid rgba(213,243,106,.19); }
+    .form-note { margin:0; color:var(--quiet); font-size:11px; }
+    .contact-form .button { justify-self:start; cursor:pointer; }
+    .noscript-note { color:var(--muted); font-size:14px; }
 
-  .reveal{opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1)}
-  .reveal.in{opacity:1; transform:none}
+    .footer { padding:28px 0 38px; border-top:1px solid var(--line); color:var(--quiet); font-size:12px; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:18px; }
+    .footer p { margin:0; }
+    .back-top { color:var(--muted); text-decoration:none; }
 
-  /* À propos */
-  .about{display:grid; grid-template-columns:1.4fr 1fr; gap:18px}
-  .about-card{padding:34px}
-  .about-card p{color:var(--muted); font-size:17px; margin:0 0 16px}
-  .about-card p:last-child{margin:0}
-  .stats{display:flex; flex-direction:column; gap:14px}
-  .stat{padding:26px 28px; display:flex; flex-direction:column; gap:4px}
-  .stat .num{font-size:38px; font-weight:700; letter-spacing:-.03em;
-    background:linear-gradient(135deg,var(--blue),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent}
-  .stat .lab{color:var(--muted); font-size:14px}
-  @media(max-width:820px){ .about{grid-template-columns:1fr} }
-
-  /* Timeline expériences */
-  .timeline{position:relative; padding-left:30px}
-  .timeline::before{content:""; position:absolute; left:5px; top:6px; bottom:6px; width:2px;
-    background:linear-gradient(180deg,var(--blue),var(--violet),var(--amber))}
-  .tl-item{position:relative; margin-bottom:16px}
-  .tl-item::before{content:""; position:absolute; left:-29px; top:26px; width:12px; height:12px; border-radius:50%;
-    background:var(--bg-0); border:2px solid var(--violet); box-shadow:0 0 12px var(--violet)}
-  .tl-card{padding:24px 28px}
-  .tl-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:8px}
-  .tl-role{font-size:18px; font-weight:600; letter-spacing:-.01em}
-  .tl-when{font-size:13px; color:var(--faint); font-variant-numeric:tabular-nums; white-space:nowrap}
-  .tl-org{color:var(--blue); font-size:14px; font-weight:500; margin:3px 0 10px}
-  .tl-desc{color:var(--muted); font-size:15px; margin:0}
-  .badge{display:inline-block; font-size:12px; padding:3px 10px; border-radius:999px;
-    background:rgba(255,180,77,.14); color:var(--amber); border:1px solid rgba(255,180,77,.28); margin-left:8px}
-
-  /* Compétences */
-  .skills-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px}
-  .skill{padding:26px}
-  .skill h3{margin:0 0 14px; font-size:16px; font-weight:600}
-  .chips{display:flex; flex-wrap:wrap; gap:8px}
-  .chip{font-size:13px; padding:8px 14px; border-radius:999px; background:var(--glass-2);
-    border:1px solid var(--stroke-soft); color:var(--txt)}
-  .bar{height:6px; border-radius:999px; background:var(--glass-2); overflow:hidden; margin:8px 0 2px}
-  .bar i{display:block; height:100%; border-radius:999px; background:linear-gradient(90deg,var(--blue),var(--violet)); width:0; transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
-  .skill .row{display:flex; justify-content:space-between; font-size:14px; color:var(--muted); margin-top:14px}
-
-  /* Formations */
-  .edu-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px}
-  .edu{padding:28px}
-  .edu .when{font-size:13px; color:var(--faint); font-variant-numeric:tabular-nums}
-  .edu h3{margin:8px 0 6px; font-size:18px; font-weight:600; letter-spacing:-.01em}
-  .edu .school{color:var(--blue); font-size:14px}
-
-  /* Objectif concession */
-  .goal{padding:54px; text-align:center; position:relative; overflow:hidden}
-  .goal .kicker{justify-content:center}
-  .goal h2{max-width:760px; margin:0 auto 18px}
-  .goal p{color:var(--muted); font-size:18px; max-width:640px; margin:0 auto 30px}
-  .goal-steps{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; text-align:left}
-  .gstep{padding:24px; background:var(--glass-2); border:1px solid var(--stroke-soft); border-radius:var(--radius-sm)}
-  .gstep .n{font-size:13px; font-weight:700; color:var(--amber); font-variant-numeric:tabular-nums}
-  .gstep h4{margin:8px 0 6px; font-size:16px; font-weight:600}
-  .gstep p{font-size:14px; color:var(--muted); margin:0; max-width:none}
-  @media(max-width:760px){ .goal-steps{grid-template-columns:1fr} .goal{padding:36px 26px} }
-
-  /* Contact / connecteurs */
-  .contact{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-  .connect{padding:34px}
-  .connect h2{margin-bottom:8px}
-  .links{display:flex; flex-direction:column; gap:10px; margin-top:26px}
-  .link-row{display:flex; align-items:center; gap:14px; padding:16px 20px; border-radius:var(--radius-sm);
-    background:var(--glass-2); border:1px solid var(--stroke-soft); transition:.25s}
-  .link-row:hover{transform:translateY(-2px); border-color:var(--stroke)}
-  .ic{width:40px; height:40px; flex:none; border-radius:12px; display:grid; place-items:center;
-    background:linear-gradient(135deg,var(--blue),var(--violet)); color:#fff}
-  .ic svg{width:20px; height:20px}
-  .link-row .l{font-size:12px; color:var(--faint)}
-  .link-row .v{font-size:15px; font-weight:500}
-  form{padding:34px; display:flex; flex-direction:column; gap:14px}
-  label{font-size:13px; color:var(--muted)}
-  input,textarea{width:100%; padding:14px 16px; border-radius:14px; background:var(--glass-2);
-    border:1px solid var(--stroke-soft); color:var(--txt); font-family:inherit; font-size:15px; transition:.2s}
-  input:focus,textarea:focus{outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(77,155,255,.18)}
-  textarea{resize:vertical; min-height:110px}
-  .form-field{display:flex; flex-direction:column; gap:6px}
-  @media(max-width:820px){ .contact{grid-template-columns:1fr} }
-
-  footer{padding:40px 0 60px; text-align:center; color:var(--faint); font-size:14px}
-  footer a{color:var(--muted)}
-
-  :focus-visible{outline:2px solid var(--blue); outline-offset:3px; border-radius:6px}
-
-  @media (prefers-reduced-motion: reduce){
-    *{scroll-behavior:auto !important}
-    .reveal{transition:none; opacity:1; transform:none}
-    .blob{transition:none}
-  }
-</style>
+    @media (max-width: 900px) {
+      .nav-links { gap:16px; }
+      .hero-grid { grid-template-columns:minmax(0,1fr) minmax(270px,.8fr); gap:30px; }
+      .hero-visual { min-height:370px; }
+      .section { padding:88px 0; }
+      .story-grid, .skills-grid { grid-template-columns:1fr 1fr; }
+      .story-card:last-child, .skill-card:last-child { grid-column:1 / -1; }
+      .contact-grid { gap:30px; }
+    }
+    @media (max-width: 700px) {
+      html { scroll-padding-top:75px; }
+      .container { width:min(var(--max),calc(100% - 36px)); }
+      .header-inner { min-height:68px; gap:12px; }
+      .brand-name { font-size:13px; }
+      .menu-toggle { display:grid; place-items:center; margin-left:auto; }
+      .header-cta { min-height:42px; padding:0 13px; font-size:12px; }
+      .nav-links { position:absolute; top:calc(100% + 1px); right:0; left:0; display:none; flex-direction:column; align-items:stretch; gap:0; padding:8px 18px 16px; border-bottom:1px solid var(--line); background:rgba(17,20,18,.98); }
+      .nav-links.open { display:flex; }
+      .nav-links a { display:block; padding:13px 0; border-bottom:1px solid rgba(244,241,233,.08); }
+      .nav-links li:last-child a { border-bottom:0; }
+      .hero { padding:58px 0 49px; }
+      .hero-grid { grid-template-columns:1fr; gap:36px; }
+      .hero-copy { font-size:17px; }
+      .hero-visual { min-height:320px; }
+      .visual-frame { width:min(78%,340px); aspect-ratio:.92; }
+      .floating-note { right:0; bottom:22px; width:144px; padding:12px; }
+      .floating-note strong { font-size:22px; }
+      .metrics-grid { grid-template-columns:1fr; padding:8px 0; }
+      .metric, .metric:first-child { min-height:76px; padding:14px 0; border-right:0; border-bottom:1px solid var(--line); }
+      .metric:last-child { border-bottom:0; }
+      .metric strong { min-width:76px; font-size:31px; }
+      .section { padding:72px 0; }
+      .section-heading { grid-template-columns:1fr; gap:15px; margin-bottom:30px; }
+      .section-intro { max-width:520px; }
+      .about-grid, .education-grid, .contact-grid { grid-template-columns:1fr; }
+      .about-card { min-height:0; padding:25px; }
+      .about-aside { grid-template-columns:1fr 1fr; }
+      .principle { min-height:145px; padding:18px; }
+      .principle strong { font-size:16px; }
+      .story-grid, .skills-grid { grid-template-columns:1fr; }
+      .story-card, .skill-card { min-height:0; }
+      .story-card:last-child, .skill-card:last-child { grid-column:auto; }
+      .story-number { margin-bottom:25px; }
+      .timeline::before { left:78px; }
+      .timeline-item { grid-template-columns:60px 1fr; gap:36px; padding-bottom:27px; }
+      .timeline-item::before { left:73px; }
+      .timeline-date { font-size:10px; line-height:1.5; }
+      .timeline-title { font-size:16px; }
+      .badges { grid-template-columns:1fr 1fr; }
+      .badge-card { min-height:195px; }
+      .badge-card:last-child { grid-column:1 / -1; }
+      .goal-panel { padding:29px 22px; border-radius:23px; }
+      .goal-steps { grid-template-columns:1fr; }
+      .goal-step { min-height:0; }
+      .contact-grid { gap:30px; }
+      .contact-form { padding:20px; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+    }
+    @media (max-width: 390px) {
+      .brand-name { max-width:120px; white-space:normal; line-height:1.15; }
+      .header-cta { padding:0 10px; }
+      .hero-actions { align-items:stretch; flex-direction:column; }
+      .hero-actions .button { width:100%; }
+      .about-aside { grid-template-columns:1fr; }
+      .principle { min-height:112px; }
+      .badges { grid-template-columns:1fr; }
+      .badge-card:last-child { grid-column:auto; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.01ms !important; animation-iteration-count:1 !important; transition-duration:.01ms !important; }
+    }
+  </style>
 </head>
 <body>
-
-<!-- Ambiance -->
-<div class="ambient" aria-hidden="true">
-  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
-</div>
-<div class="grain" aria-hidden="true"></div>
-<canvas id="scene" aria-hidden="true"></canvas>
-
-<!-- Rail de niveaux -->
-<aside class="rail" aria-hidden="true">
-  <div class="rail-item" data-rail="1" style="--c:var(--blue)"><span class="rail-label">01 · Fondations tech</span><span class="rail-tick"></span></div>
-  <div class="rail-item" data-rail="2" style="--c:var(--violet)"><span class="rail-label">02 · Virage commercial</span><span class="rail-tick"></span></div>
-  <div class="rail-item" data-rail="3" style="--c:var(--amber)"><span class="rail-label">03 · La concession</span><span class="rail-tick"></span></div>
-</aside>
-
-<!-- Nav -->
-<nav>
-  <div class="nav-pill">
-    <span class="nav-name">Samuel Happi Yamdje</span>
-    <div class="nav-links">
-      <a href="#parcours">Parcours</a>
-      <a href="#competences">Compétences</a>
-      <a href="#formations">Formations</a>
-      <a href="#objectif">Objectif</a>
-    </div>
-    <a class="nav-cta" href="#contact">Me contacter</a>
-  </div>
-</nav>
-
-<div class="wrap">
-
-  <!-- HERO -->
-  <header>
-    <div class="container">
-      <span class="eyebrow glass"><span class="dot"></span> Candidature en alternance · BTS NDRC</span>
-      <h1>Samuel<br>Happi Yamdje</h1>
-      <p class="lede">De la <b>cybersécurité</b> à la <b>relation client</b>. Un parcours tech qui m'a donné la rigueur — aujourd'hui mis au service de la <b>vente et du conseil</b>. Objectif final&nbsp;: <b>diriger ma propre concession automobile.</b></p>
-      <div class="hero-cta">
-        <a class="btn btn-p" href="#parcours">Découvrir mon parcours →</a>
-        <a class="btn btn-g" href="#contact">Me contacter</a>
-      </div>
-      <div class="hero-meta">
-        <span>📍 Cergy-le-Haut (95)</span>
-        <span>🚗 Permis B · véhiculé</span>
-        <span>🗓️ 2 j en cours / 3 j en entreprise</span>
-        <span>🌐 Anglais B1</span>
-      </div>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#accueil" aria-label="Samuel Happi Yamdje, accueil">
+        <span class="brand-mark" aria-hidden="true">SH</span>
+        <span class="brand-name">Samuel Happi Yamdje</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav aria-label="Navigation principale">
+        <ul class="nav-links" id="navigation">
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#formations">Formations</a></li>
+        </ul>
+      </nav>
+      <a class="header-cta" href="#contact">Parlons ensemble <span aria-hidden="true">↗</span></a>
     </div>
   </header>
 
-  <!-- À PROPOS -->
-  <section id="apropos">
-    <div class="container">
-      <div class="kicker reveal" style="--c:var(--blue)"><span class="lvl">01</span> Les fondations tech</div>
-      <h2 class="reveal">Un profil rare : la rigueur de la tech, l'énergie du commerce.</h2>
-      <div class="about">
-        <div class="about-card glass reveal">
-          <p>Pendant trois ans, j'ai construit des réseaux, sécurisé des infrastructures et géré du support technique. Ce socle m'a appris à comprendre vite, à m'adapter et à analyser avant d'agir — des réflexes qui font la différence face à un client.</p>
-          <p>En parallèle, j'ai bâti une communauté de <b>60 000 abonnés</b> autour du sport automobile : création de contenu, montage, animation. J'y ai découvert ce qui me passionne vraiment — créer du lien, convaincre, raconter un produit.</p>
-          <p>Le BTS NDRC est mon point de bascule. Je relie ces deux mondes pour viser un seul objectif : la <b>direction d'une concession automobile.</b></p>
-        </div>
-        <div class="stats">
-          <div class="stat glass reveal"><span class="num">60k</span><span class="lab">Abonnés fédérés (sport auto)</span></div>
-          <div class="stat glass reveal"><span class="num">3 ans</span><span class="lab">De formation tech & cybersécurité</span></div>
-          <div class="stat glass reveal"><span class="num">7</span><span class="lab">Expériences terrain & stages</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PARCOURS -->
-  <section id="parcours">
-    <div class="container">
-      <div class="kicker reveal" style="--c:var(--violet)"><span class="lvl">02</span> Le virage commercial</div>
-      <h2 class="reveal">Le parcours.</h2>
-      <p class="section-lede reveal">Du terrain administratif à la création digitale, chaque expérience a renforcé un même fil rouge : le contact client et le sens du collectif.</p>
-      <div class="timeline">
-        <div class="tl-item reveal"><div class="tl-card glass">
-          <div class="tl-head"><div class="tl-role">Employé polyvalent — Restauration</div><div class="tl-when">2026 — Aujourd'hui</div></div>
-          <div class="tl-org">API Restauration · Fontenay-sous-Bois</div>
-          <p class="tl-desc">Accueil et service client, gestion du flux, travail en équipe sous pression.</p>
-        </div></div>
-        <div class="tl-item reveal"><div class="tl-card glass">
-          <div class="tl-head"><div class="tl-role">Créateur de contenu digital — Sports mécaniques<span class="badge">60k abonnés</span></div><div class="tl-when">2022 — 2024</div></div>
-          <div class="tl-org">Indépendant · Gisors</div>
-          <p class="tl-desc">Création de contenu, montage vidéo, gestion de communauté et croissance d'audience.</p>
-        </div></div>
-        <div class="tl-item reveal"><div class="tl-card glass">
-          <div class="tl-head"><div class="tl-role">Audiovisuel — Association</div><div class="tl-when">2020 — Présent</div></div>
-          <div class="tl-org">Villetaneuse</div>
-          <p class="tl-desc">Gestion de live, coordination d'équipe, gestion du matériel et diffusion événementielle.</p>
-        </div></div>
-        <div class="tl-item reveal"><div class="tl-card glass">
-          <div class="tl-head"><div class="tl-role">Stagiaire IT — SOUMAR Boutique</div><div class="tl-when">2025</div></div>
-          <div class="tl-org">Villemomble</div>
-          <p class="tl-desc">Réseau, sécurité et configuration d'infrastructure.</p>
-        </div></div>
-        <div class="tl-item reveal"><div class="tl-card glass">
-          <div class="tl-head"><div class="tl-role">Stagiaire IT — Ondolo System IT</div><div class="tl-when">2024</div></div>
-          <div class="tl-org">Looze</div>
-          <p class="tl-desc">Windows Server, Active Directory, support technique et réseau.</p>
-        </div></div>
-        <div class="tl-item reveal"><div class="tl-card glass">
-          <div class="tl-head"><div class="tl-role">Stagiaire — Préfecture du Val-d'Oise</div><div class="tl-when">2023</div></div>
-          <div class="tl-org">Cergy</div>
-          <p class="tl-desc">Accueil physique, orientation du public, environnement administratif.</p>
-        </div></div>
-        <div class="tl-item reveal"><div class="tl-card glass">
-          <div class="tl-head"><div class="tl-role">Stagiaire — VillaVerde</div><div class="tl-when">2018</div></div>
-          <div class="tl-org">Gisors</div>
-          <p class="tl-desc">Vente, conseil client et mise en rayon.</p>
-        </div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPÉTENCES -->
-  <section id="competences">
-    <div class="container">
-      <div class="kicker reveal" style="--c:var(--violet)"><span class="lvl">02</span> Le virage commercial</div>
-      <h2 class="reveal">Compétences.</h2>
-      <div class="skills-grid">
-        <div class="skill glass reveal">
-          <h3>Relation & vente</h3>
-          <div class="row"><span>Aisance relationnelle</span></div><div class="bar"><i data-w="92%"></i></div>
-          <div class="row"><span>Conseil client</span></div><div class="bar"><i data-w="85%"></i></div>
-          <div class="row"><span>Prospection</span></div><div class="bar"><i data-w="78%"></i></div>
-        </div>
-        <div class="skill glass reveal">
-          <h3>Savoir-être</h3>
-          <div class="row"><span>Adaptabilité</span></div><div class="bar"><i data-w="90%"></i></div>
-          <div class="row"><span>Organisation</span></div><div class="bar"><i data-w="84%"></i></div>
-          <div class="row"><span>Travail d'équipe</span></div><div class="bar"><i data-w="88%"></i></div>
-        </div>
-        <div class="skill glass reveal">
-          <h3>Outils</h3>
-          <div class="chips">
-            <span class="chip">Pack Office</span><span class="chip">Canva</span>
-            <span class="chip">CapCut</span><span class="chip">Premiere Pro</span>
-            <span class="chip">Photographie</span>
+  <main id="contenu">
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">BTS NDRC · alternance · Cergy</p>
+          <h1 id="hero-title">Du sens du service à <span>l’automobile.</span></h1>
+          <p class="hero-copy">Je m’appelle Samuel. Après trois années de formation en réseaux et cybersécurité, je construis mon parcours dans la <strong>relation client et le développement commercial</strong>, avec une ambition : évoluer jusqu’à la direction d’une concession automobile.</p>
+          <div class="hero-actions">
+            <a class="button" href="#parcours">Découvrir mon parcours <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+            <a class="button button-secondary" href="mailto:happiyamdjes@gmail.com">Me contacter</a>
           </div>
-          <h3 style="margin-top:22px">Langues</h3>
-          <div class="chips"><span class="chip">Français · natif</span><span class="chip">Anglais · B1</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORMATIONS -->
-  <section id="formations">
-    <div class="container">
-      <div class="kicker reveal" style="--c:var(--blue)"><span class="lvl">01</span> Les fondations tech</div>
-      <h2 class="reveal">Formations.</h2>
-      <div class="edu-grid">
-        <div class="edu glass reveal">
-          <div class="when">2026 — 2028 · en cours</div>
-          <h3>BTS Négociation et Digitalisation de la Relation Client</h3>
-          <div class="school">Inseec · alternance (2 j cours / 3 j entreprise)</div>
-        </div>
-        <div class="edu glass reveal">
-          <div class="when">2022 — 2025</div>
-          <h3>Licence Réseaux & Cybersécurité</h3>
-          <div class="school">CY Cergy Paris Université · Cergy</div>
-        </div>
-        <div class="edu glass reveal">
-          <div class="when">2021 — 2022</div>
-          <h3>Formation Supérieure de Spécialisation en vidéoprotection</h3>
-          <div class="school">CY Tech · Argenteuil</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- OBJECTIF -->
-  <section id="objectif">
-    <div class="container">
-      <div class="goal glass reveal">
-        <div class="kicker" style="--c:var(--amber)"><span class="lvl">03</span> La concession</div>
-        <h2>Mon objectif : diriger ma propre concession automobile.</h2>
-        <p>Tout mon parcours converge vers un projet précis — allier ma passion pour l'automobile, ma maîtrise du digital et mon goût du commerce pour bâtir, puis diriger, un point de vente automobile moderne.</p>
-        <div class="goal-steps">
-          <div class="gstep"><div class="n">Étape 01</div><h4>Maîtriser la vente</h4><p>Le BTS NDRC pour ancrer les fondamentaux de la négociation et de la relation client.</p></div>
-          <div class="gstep"><div class="n">Étape 02</div><h4>Le terrain auto</h4><p>Vendeur puis chef des ventes en concession, pour comprendre le métier de l'intérieur.</p></div>
-          <div class="gstep"><div class="n">Étape 03</div><h4>Diriger</h4><p>Piloter une concession : équipe, performance commerciale et expérience client.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="contact">
-        <div class="connect glass reveal">
-          <div class="kicker" style="--c:var(--amber)">Connectons-nous</div>
-          <h2>Parlons alternance.</h2>
-          <p class="section-lede" style="margin-bottom:0">Une entreprise, une concession, une opportunité ? Je suis disponible en alternance dès la rentrée.</p>
-          <div class="links">
-            <a class="link-row" href="mailto:happiyamdjes@gmail.com">
-              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-              <span><span class="l">Email</span><br><span class="v">happiyamdjes@gmail.com</span></span>
-            </a>
-            <a class="link-row" href="tel:+33749470595">
-              <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
-              <span><span class="l">Téléphone</span><br><span class="v">07 49 47 05 95</span></span>
-            </a>
-            <a class="link-row" href="https://www.linkedin.com/in/samuel-happi-yamdje/" target="_blank" rel="noopener">
-              <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2 0-2.3 1.57-2.3 3.2V21H9z"/></svg></span>
-              <span><span class="l">LinkedIn</span><br><span class="v">in/samuel-happi-yamdje</span></span>
-            </a>
+          <div class="hero-meta" aria-label="Informations pratiques">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Cergy (95)</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 17h14l1-5-2-5H6l-2 5 1 5Zm0 0v2m14-2v2M7 17v-3h10v3M7 11h.01M17 11h.01"/></svg>Permis B · véhiculé</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg>2 jours en cours · 3 jours en entreprise</span>
           </div>
         </div>
+        <div class="hero-visual" aria-label="Illustration abstraite évoquant l’automobile et la précision" role="img">
+          <div class="visual-frame" aria-hidden="true">
+            <div class="orb"></div><div class="orbit"><span class="orbit-dot"></span></div>
+            <div class="visual-caption"><span><small>Relation · mouvement · ambition</small><strong>Construire la suite.</strong></span><span class="visual-index">01 / 03</span></div>
+          </div>
+          <div class="floating-note"><strong>60 000</strong><span>personnes réunies autour du sport automobile</span></div>
+        </div>
+      </div>
+    </section>
 
-        <form class="glass reveal" id="contactForm" novalidate>
-          <div class="form-field"><label for="n">Votre nom</label><input id="n" type="text" placeholder="Entreprise ou contact" required></div>
-          <div class="form-field"><label for="e">Votre email</label><input id="e" type="email" placeholder="vous@entreprise.fr" required></div>
-          <div class="form-field"><label for="m">Votre message</label><textarea id="m" placeholder="Le poste, la mission, les dates…" required></textarea></div>
-          <button class="btn btn-p" type="submit" style="justify-content:center">Envoyer le message</button>
+    <section class="metrics" aria-label="Repères du parcours">
+      <div class="container metrics-grid">
+        <div class="metric"><strong>60k</strong><span>abonnés fédérés autour du sport auto</span></div>
+        <div class="metric"><strong>3 ans</strong><span>de formation en réseaux et cybersécurité</span></div>
+        <div class="metric"><strong>7</strong><span>expériences professionnelles et stages</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="profil" aria-labelledby="profil-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-label">01 · Mon profil</p><h2 id="profil-title">La technique m’a appris la méthode. Le commerce m’attire par le lien.</h2></div>
+          <p class="section-intro">Mon parcours rassemble analyse, création et contact humain. Je veux mettre ces expériences au service d’une relation client exigeante et durable.</p>
+        </div>
+        <div class="about-grid">
+          <article class="about-card">
+            <h3>Un parcours qui fait sens</h3>
+            <p>Pendant trois ans, je me suis formé aux réseaux, à la cybersécurité et au support. J’y ai développé des réflexes utiles dans toute activité : <strong>écouter, comprendre le besoin, diagnostiquer et expliquer clairement.</strong></p>
+            <p>En parallèle, la création de contenus autour du sport automobile m’a permis de réunir une communauté de 60 000 abonnés. J’y ai découvert le plaisir de raconter un produit, d’animer une audience et de créer une relation dans la durée.</p>
+            <p>Aujourd’hui en BTS NDRC, je relie ces acquis à mon projet professionnel dans la vente automobile.</p>
+          </article>
+          <div class="about-aside">
+            <div class="principle"><span>Ce qui me motive</span><strong>Comprendre les attentes et apporter une réponse juste.</strong></div>
+            <div class="principle"><span>Ce que je construis</span><strong>Une expérience client à la hauteur de ma passion auto.</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="experiences-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-label">02 · Expériences</p><h2 id="experiences-title">Des expériences qui se complètent.</h2></div>
+          <p class="section-intro">Du service au support informatique, chaque étape m’a appris à travailler avec les autres et à répondre à un besoin concret.</p>
+        </div>
+        <div class="story-grid">
+          <article class="story-card"><span class="story-number">01</span><h3>Créer une communauté</h3><p>Conception et montage de contenus sur les sports mécaniques, animation des échanges et développement d’une audience fidèle.</p><span class="story-tag">Contenu · audience · régularité</span></article>
+          <article class="story-card"><span class="story-number">02</span><h3>Être au contact du client</h3><p>Accueil et service en restauration : gérer le flux, rester disponible et contribuer au bon fonctionnement d’une équipe sous pression.</p><span class="story-tag">Écoute · service · collectif</span></article>
+          <article class="story-card"><span class="story-number">03</span><h3>Comprendre avant d’agir</h3><p>Stages en informatique : réseau, sécurité, Windows Server, Active Directory et assistance technique.</p><span class="story-tag">Analyse · méthode · pédagogie</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="parcours" aria-labelledby="parcours-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-label">03 · Le parcours</p><h2 id="parcours-title">Les étapes derrière le projet.</h2></div>
+          <p class="section-intro">Un parcours mêlant relation client, création digitale, audiovisuel et bases techniques.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item"><time class="timeline-date" datetime="2026">2026 — AUJ.</time><div class="timeline-content"><h3 class="timeline-title">Employé polyvalent · restauration</h3><div class="timeline-org">API Restauration · Fontenay-sous-Bois</div><p>Accueil et service client, gestion du flux et travail en équipe sous pression.</p></div></article>
+          <article class="timeline-item"><time class="timeline-date" datetime="2022">2022 — 2024</time><div class="timeline-content"><h3 class="timeline-title">Créateur de contenu digital · sports mécaniques</h3><div class="timeline-org">Indépendant · Gisors</div><p>Création de contenu, montage vidéo, gestion de communauté et croissance d’audience jusqu’à 60 000 abonnés.</p></div></article>
+          <article class="timeline-item"><time class="timeline-date" datetime="2020">2020 — AUJ.</time><div class="timeline-content"><h3 class="timeline-title">Audiovisuel · association</h3><div class="timeline-org">Villetaneuse</div><p>Gestion de lives, coordination d’équipe, matériel et diffusion événementielle.</p></div></article>
+          <article class="timeline-item"><time class="timeline-date" datetime="2025">2025</time><div class="timeline-content"><h3 class="timeline-title">Stage informatique</h3><div class="timeline-org">SOUMAR Boutique · Villemomble</div><p>Réseau, sécurité et configuration d’infrastructure.</p></div></article>
+          <article class="timeline-item"><time class="timeline-date" datetime="2024">2024</time><div class="timeline-content"><h3 class="timeline-title">Stage informatique</h3><div class="timeline-org">Ondolo System IT · Looze</div><p>Windows Server, Active Directory, support technique et réseau.</p></div></article>
+          <article class="timeline-item"><time class="timeline-date" datetime="2023">2023</time><div class="timeline-content"><h3 class="timeline-title">Stage · accueil du public</h3><div class="timeline-org">Préfecture du Val-d’Oise · Cergy</div><p>Accueil physique et orientation du public dans un environnement administratif.</p></div></article>
+          <article class="timeline-item"><time class="timeline-date" datetime="2018">2018</time><div class="timeline-content"><h3 class="timeline-title">Stage · vente et conseil</h3><div class="timeline-org">VillaVerde · Gisors</div><p>Vente, conseil client et mise en rayon.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="competences" aria-labelledby="competences-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-label">04 · Compétences</p><h2 id="competences-title">Ce que je peux apporter.</h2></div>
+          <p class="section-intro">Des compétences nourries par l’expérience, que je continue de développer en formation et sur le terrain.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 19V5m0 14h16M7 15l4-4 3 2 6-7"/><path d="M16 6h4v4"/></svg></span><h3>Relation client & vente</h3><p>Accueil, écoute, conseil et volonté de progresser en prospection et négociation.</p><div class="tag-list"><span class="tag">Conseil</span><span class="tag">Service</span><span class="tag">Prospection</span></div></article>
+          <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20v-1a6 6 0 0 1 12 0v1M16 5.5a3 3 0 0 1 0 5.8M18 14a5 5 0 0 1 3 4.6V20"/></svg></span><h3>Organisation & collectif</h3><p>Adaptabilité, coordination et sens des responsabilités dans des contextes variés.</p><div class="tag-list"><span class="tag">Adaptabilité</span><span class="tag">Organisation</span><span class="tag">Équipe</span></div></article>
+          <article class="skill-card"><span class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M7 9h4m-4 4h2m4-4h4m-4 4h4"/></svg></span><h3>Outils & langues</h3><p>Création de contenus et outils bureautiques. Français natif, anglais niveau B1.</p><div class="tag-list"><span class="tag">Pack Office</span><span class="tag">Canva</span><span class="tag">CapCut</span><span class="tag">Premiere Pro</span><span class="tag">Anglais B1</span></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="formations" aria-labelledby="formations-title">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="section-label">05 · Formation</p><h2 id="formations-title">Apprendre, puis mettre en pratique.</h2></div>
+          <p class="section-intro">Une nouvelle formation commerciale s’appuie sur un socle technique et des cours Cisco Networking Academy.</p>
+        </div>
+        <div class="education-grid">
+          <article class="education-card current"><div class="education-date"><span>2026 — 2028</span><span class="current-label">EN COURS</span></div><h3>BTS Négociation et Digitalisation de la Relation Client</h3><p>Inseec · alternance, 2 jours en cours et 3 jours en entreprise.</p></article>
+          <article class="education-card"><div class="education-date"><span>2022 — 2025</span></div><h3>Licence Réseaux & Cybersécurité</h3><p>CY Cergy Paris Université · Cergy.</p></article>
+          <article class="education-card"><div class="education-date"><span>2021 — 2022</span></div><h3>Formation Supérieure de Spécialisation en vidéoprotection</h3><p>CY Tech · Argenteuil.</p></article>
+          <article class="education-card"><div class="education-date"><span>CISCO NETWORKING ACADEMY</span></div><h3>Cours en réseaux et cybersécurité</h3><p>Badges vérifiés : introduction aux réseaux, switching/routing et introduction à la cybersécurité.</p></article>
+        </div>
+        <div class="badges" aria-label="Badges Cisco Networking Academy">
+          <figure class="badge-card"><img src="ccna1.png" width="160" height="160" loading="lazy" alt="Badge Cisco Networking Academy : CCNA Introduction to Networks"><figcaption><strong>Introduction to Networks</strong><span>Cisco Networking Academy</span></figcaption></figure>
+          <figure class="badge-card"><img src="ccna2.png" width="160" height="160" loading="lazy" alt="Badge Cisco Networking Academy : CCNA Switching, Routing & Wireless Essentials"><figcaption><strong>Switching, Routing & Wireless</strong><span>Cisco Networking Academy</span></figcaption></figure>
+          <figure class="badge-card"><img src="intro_cyber.png" width="160" height="160" loading="lazy" alt="Badge Cisco Networking Academy : Introduction to Cybersecurity"><figcaption><strong>Introduction to Cybersecurity</strong><span>Cisco Networking Academy</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="objectif-title">
+      <div class="container">
+        <div class="goal-panel">
+          <p class="section-label">06 · Mon cap</p>
+          <h2 id="objectif-title">À terme, diriger une concession automobile.</h2>
+          <p>Je veux associer ma passion pour l’automobile, le digital et le commerce pour contribuer à un point de vente moderne, attentif à ses clients et à ses équipes.</p>
+          <div class="goal-steps">
+            <article class="goal-step"><span>Étape 01</span><strong>Maîtriser la vente</strong><p>Consolider mes bases en négociation et relation client avec le BTS NDRC.</p></article>
+            <article class="goal-step"><span>Étape 02</span><strong>Apprendre sur le terrain</strong><p>Évoluer en concession et comprendre le métier au contact des clients et des équipes.</p></article>
+            <article class="goal-step"><span>Étape 03</span><strong>Prendre des responsabilités</strong><p>Développer les compétences nécessaires pour piloter l’activité et l’expérience client.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="section-label">07 · Contact</p>
+          <h2 id="contact-title">Et si on parlait de la suite&nbsp;?</h2>
+          <p>Vous cherchez un alternant motivé par la relation client et l’univers automobile&nbsp;? Écrivez-moi ou appelez-moi directement.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:happiyamdjes@gmail.com"><span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><small>EMAIL</small><strong>happiyamdjes@gmail.com</strong></span></a>
+            <a class="contact-link" href="tel:+33749470595"><span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>TÉLÉPHONE</small><strong>07 49 47 05 95</strong></span></a>
+            <a class="contact-link" href="https://www.linkedin.com/in/samuel-happi-yamdje/" target="_blank" rel="noopener noreferrer"><span class="contact-link-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2 0-2.3 1.57-2.3 3.2V21H9z"/></svg></span><span><small>LINKEDIN</small><strong>Samuel Happi Yamdje</strong></span></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="field"><label for="name">Votre nom</label><input id="name" name="name" autocomplete="name" placeholder="Nom ou entreprise" required></div>
+          <div class="field"><label for="email">Votre adresse e-mail</label><input id="email" name="email" type="email" autocomplete="email" placeholder="vous@entreprise.fr" required></div>
+          <div class="field"><label for="message">Votre message</label><textarea id="message" name="message" placeholder="Parlez-moi de votre opportunité…" required></textarea></div>
+          <button class="button" type="submit">Préparer un e-mail <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+          <p class="form-note">Le bouton ouvre votre application de messagerie avec le message prérempli. Rien n’est envoyé depuis ce site.</p>
         </form>
+        <noscript><p class="noscript-note">Pour me contacter, envoyez directement un e-mail à <a href="mailto:happiyamdjes@gmail.com">happiyamdjes@gmail.com</a>.</p></noscript>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer>
-    <p>© <span id="yr"></span> Samuel Happi Yamdje · Cergy (95) · Conçu façon liquid glass.</p>
+  <footer class="footer">
+    <div class="container footer-inner"><p>© <span id="year">2026</span> Samuel Happi Yamdje · Cergy (95)</p><a class="back-top" href="#accueil">Retour en haut ↑</a></div>
   </footer>
-</div>
 
-<script>
-document.getElementById('yr').textContent = new Date().getFullYear();
-const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* ===== Reveal au scroll ===== */
-const io = new IntersectionObserver((es)=>{
-  es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);
-    e.target.querySelectorAll('.bar i').forEach(b=>b.style.width=b.dataset.w);
-  }});
-},{threshold:.18});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* ===== Progression + niveaux + ambiance ===== */
-const railItems = document.querySelectorAll('.rail-item');
-const C = { blue:[0x4D,0x9B,0xFF], violet:[0xA7,0x8B,0xFF], amber:[0xFF,0xB4,0x4D] };
-function lerp(a,b,t){return a+(b-a)*t}
-function mix(c1,c2,t){return c1.map((v,i)=>Math.round(lerp(v,c2[i],t)))}
-function rgb(c){return `rgb(${c[0]},${c[1]},${c[2]})`}
-
-let progress = 0;        // 0 → 1 sur toute la page
-let levelColor = C.blue; // couleur courante (pour la 3D)
-
-function onScroll(){
-  const max = document.body.scrollHeight - window.innerHeight;
-  progress = max>0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
-
-  // 3 niveaux : tech(0–.45) → commercial(.45–.8) → concession(.8–1)
-  let lvl;
-  if(progress < .45){ lvl=1; levelColor = mix(C.blue, C.violet, progress/.45); }
-  else if(progress < .8){ lvl=2; levelColor = mix(C.violet, C.amber, (progress-.45)/.35); }
-  else { lvl=3; levelColor = C.amber; }
-  railItems.forEach(it=> it.classList.toggle('on', +it.dataset.rail === lvl));
-
-  // ambiance : la nappe ambre remonte avec la progression
-  const b3 = document.querySelector('.blob.b3');
-  if(b3 && !reduce){ b3.style.opacity = (.12 + progress*.5).toFixed(2);
-    b3.style.transform = `translateY(${(1-progress)*22}vh) scale(${1+progress*.4})`; }
-}
-window.addEventListener('scroll', onScroll, {passive:true});
-window.addEventListener('resize', onScroll);
-onScroll();
-
-/* ===== Formulaire → mailto ===== */
-document.getElementById('contactForm').addEventListener('submit', e=>{
-  e.preventDefault();
-  const n=document.getElementById('n').value, em=document.getElementById('e').value, m=document.getElementById('m').value;
-  const body = encodeURIComponent(`Nom : ${n}\nEmail : ${em}\n\n${m}`);
-  window.location.href = `mailto:happiyamdjes@gmail.com?subject=${encodeURIComponent('Contact alternance — '+n)}&body=${body}`;
-});
-
-/* ===== Scène 3D : le « joyau » de verre liquide ===== */
-(function(){
-  if(typeof THREE === 'undefined') return;        // dégradé CSS en secours
-  const canvas = document.getElementById('scene');
-  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, reduce?1:2));
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, innerWidth/innerHeight, 0.1, 100);
-  camera.position.z = 5.2;
-
-  const isMobile = innerWidth < 760;
-
-  // Joyau translucide
-  const geo = new THREE.IcosahedronGeometry(1.55, isMobile?1:2);
-  const mat = new THREE.MeshPhysicalMaterial({
-    color:0xffffff, metalness:0, roughness:0.06,
-    transparent:true, opacity:0.42, clearcoat:1, clearcoatRoughness:0.12,
-    reflectivity:1, transmission:0.9, ior:1.4, thickness:1.2
-  });
-  const gem = new THREE.Mesh(geo, mat);
-  scene.add(gem);
-
-  // Cœur lumineux (donne la teinte « liquide »)
-  const coreMat = new THREE.MeshBasicMaterial({color:0x4D9BFF, transparent:true, opacity:0.85});
-  const core = new THREE.Mesh(new THREE.IcosahedronGeometry(0.55, 1), coreMat);
-  gem.add(core);
-
-  // Contour fin
-  const wire = new THREE.Mesh(geo.clone(), new THREE.MeshBasicMaterial({color:0xffffff, wireframe:true, transparent:true, opacity:0.10}));
-  gem.add(wire);
-
-  // Lumières colorées en orbite
-  const l1 = new THREE.PointLight(0x4D9BFF, 2.2, 20); l1.position.set(4,3,4);
-  const l2 = new THREE.PointLight(0xA78BFF, 2.0, 20); l2.position.set(-4,-2,3);
-  const l3 = new THREE.PointLight(0xFFB44D, 1.4, 20); l3.position.set(0,4,-3);
-  scene.add(l1,l2,l3,new THREE.AmbientLight(0x223044,0.7));
-
-  // Poussière d'étoiles
-  const pcount = isMobile?120:260;
-  const pgeo = new THREE.BufferGeometry();
-  const pos = new Float32Array(pcount*3);
-  for(let i=0;i<pcount*3;i++) pos[i]=(Math.random()-0.5)*16;
-  pgeo.setAttribute('position', new THREE.BufferAttribute(pos,3));
-  const stars = new THREE.Points(pgeo, new THREE.PointsMaterial({color:0xffffff, size:0.025, transparent:true, opacity:0.5}));
-  scene.add(stars);
-
-  // Position du joyau (selon écran)
-  function place(){
-    gem.position.x = isMobile ? 0 : 2.05;
-    gem.position.y = isMobile ? 1.6 : 0.2;
-    gem.scale.setScalar(isMobile?0.78:1);
-  }
-  place();
-
-  let mx=0,my=0;
-  if(!reduce) window.addEventListener('pointermove', e=>{ mx=(e.clientX/innerWidth-0.5); my=(e.clientY/innerHeight-0.5); }, {passive:true});
-
-  function resize(){ camera.aspect=innerWidth/innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth,innerHeight); }
-  window.addEventListener('resize', resize); resize();
-
-  const tmp = new THREE.Color();
-  let t=0;
-  function loop(){
-    requestAnimationFrame(loop);
-    t += reduce?0:0.006;
-    if(!reduce){
-      gem.rotation.y += 0.0045 + progress*0.004;
-      gem.rotation.x = 0.2 + Math.sin(t)*0.12 + my*0.4;
-      gem.rotation.z = mx*0.3;
-      stars.rotation.y += 0.0006;
-    }
-    // morphing « niveau » : le joyau enfle légèrement et change de teinte
-    const s = (isMobile?0.78:1) * (1 + progress*0.18);
-    gem.scale.setScalar(s);
-    coreMat.color.setRGB(levelColor[0]/255, levelColor[1]/255, levelColor[2]/255);
-    l3.color.setRGB(levelColor[0]/255, levelColor[1]/255, levelColor[2]/255);
-    l3.intensity = 1.2 + progress*1.6;
-
-    // lumières en orbite
-    l1.position.x = Math.cos(t*0.7)*4; l1.position.z = Math.sin(t*0.7)*4;
-    l2.position.x = Math.cos(t*0.5+2)*4; l2.position.z = Math.sin(t*0.5+2)*4;
-
-    renderer.render(scene, camera);
-  }
-  loop();
-})();
-</script>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('#navigation');
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Ouvrir le menu' : 'Fermer le menu');
+      navigation.classList.toggle('open', !isOpen);
+    });
+    navigation.addEventListener('click', event => {
+      if (event.target.closest('a')) {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Ouvrir le menu');
+        navigation.classList.remove('open');
+      }
+    });
+    document.querySelector('#year').textContent = new Date().getFullYear();
+    document.querySelector('#contact-form').addEventListener('submit', event => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+      const name = form.elements.name.value.trim();
+      const email = form.elements.email.value.trim();
+      const message = form.elements.message.value.trim();
+      const subject = encodeURIComponent(`Contact alternance — ${name}`);
+      const body = encodeURIComponent(`Nom : ${name}\nEmail : ${email}\n\n${message}`);
+      window.location.href = `mailto:happiyamdjes@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
 </body>
 </html>
